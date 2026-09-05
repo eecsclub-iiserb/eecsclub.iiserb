@@ -410,6 +410,178 @@ export const galleryAlbums = [
   }
 ];
 
+export const achievements = [
+  {
+    id: "latent-flagship",
+    title: "IISERB Got Latent Flagship",
+    description: "Orchestrated IISER Bhopal's premier campus tech talent & project pitching showdown with live jury evaluation, interactive scoreboard, and a packed auditorium.",
+    tenure: "2024–2025 Tenure",
+    category: "Campus Events",
+    image: "assets/Latency_judge.webp",
+    credits: "EECS Organizing & Logistics Crew",
+    proofLink: "#gallery"
+  },
+  {
+    id: "spark-tank-expo",
+    title: "Spark Tank Prototyping & Pitch Expo",
+    description: "Interactive electronics exhibition and pitching platform showcasing working embedded circuits, robotics prototypes, and hardware demonstrations.",
+    tenure: "2024–2025 Tenure",
+    category: "Hackathons & Demos",
+    image: "assets/spark_tank.webp",
+    credits: "Hardware & Robotics Division",
+    proofLink: "#gallery"
+  },
+  {
+    id: "dreamlab-dit",
+    title: "DreamLab: Sora-Inspired Video DiT",
+    description: "Successfully trained and published a text-to-video Diffusion Transformer (DiT) model with spatio-temporal attention, perceptual loss minimization, and CLIP conditioning.",
+    tenure: "2024–2025 Tenure",
+    category: "Projects Shipped",
+    image: "assets/anmol_projimage.webp",
+    credits: "Anmol Agarwal",
+    proofLink: "#projects"
+  },
+  {
+    id: "els-fabrication",
+    title: "Sub-Micron Electro-Lithography System (ELS)",
+    description: "Engineered a custom hardware system for micron-level probe movement with real-time Z-axis electrical current feedback for surface patterning.",
+    tenure: "2024–2025 Tenure",
+    category: "Hardware Shipped",
+    image: "assets/ELS_image.webp",
+    credits: "Mohammad Ruvaifa",
+    proofLink: "#projects"
+  },
+  {
+    id: "pgnta-robot",
+    title: "PGNTA 17-DOF Humanoid Robotics Platform",
+    description: "Built a 17-DOF bipedal walking humanoid robot utilizing laser-cut wood, ESP32 microcontrollers, and servo kinematic algorithms.",
+    tenure: "2024–2025 Tenure",
+    category: "Robotics Milestone",
+    image: "assets/PGNTA_image.webp",
+    credits: "Prashant Gupta",
+    proofLink: "#projects"
+  },
+  {
+    id: "colloquiums-talks",
+    title: "Faculty Colloquiums on Microelectronics",
+    description: "Curated academic masterclasses on Volatile Memory architectures and emerging semiconductor physics delivered by esteemed IISERB faculty.",
+    tenure: "2024–2025 Tenure",
+    category: "Technical Talks",
+    image: "assets/volatile_mem.webp",
+    credits: "Faculty Advisory & Academic Team",
+    proofLink: "#gallery"
+  }
+];
+
+export const upcomingEvents = [
+  {
+    id: "trainee-induction",
+    title: "Trainee Applications & Induction 2025–26",
+    date: "Sept 15, 2025 • 2:30 PM to Sept 26, 2025 • 6:30 PM",
+    venue: "ONLINE / IISER Bhopal Campus",
+    description: "Annual club induction cycle welcoming ambitious student developers, circuit designers, and research enthusiasts across all departments.",
+    status: "Closed",
+    cta: "Join Waitlist / Inquiry",
+    ctaLink: "#join"
+  },
+  {
+    id: "hardware-bootcamp",
+    title: "Hands-on Microcontrollers & IoT Bootcamp",
+    date: "Upcoming Term • Weekend Intensive",
+    venue: "EECS Hardware Lab (Offline)",
+    description: "Direct hands-on lab training on ESP32 microcontrollers, GPIO sensors, I2C/SPI bus architecture, and C++ embedded firmware programming.",
+    status: "Upcoming",
+    cta: "Register Interest",
+    ctaLink: "#join"
+  },
+  {
+    id: "latent-s2",
+    title: "IISERB Got Latent: Season 2",
+    date: "Spring Flagship 2026",
+    venue: "Main Auditorium, IISER Bhopal",
+    description: "The return of our premier campus tech showdown, live hardware demos, algorithmic battles, and interactive jury pitches.",
+    status: "Upcoming",
+    cta: "View Past Recap",
+    ctaLink: "#gallery"
+  },
+  {
+    id: "quantum-seminar",
+    title: "Frontier Talk: Neuromorphic & Quantum Compute",
+    date: "Monthly Colloquium Series",
+    venue: "Lecture Hall Complex / Hybrid",
+    description: "Deep-dive academic seminar on emerging non-von-Neumann architectures, volatile memory devices, and neuromorphic computing.",
+    status: "Upcoming",
+    cta: "Contact Coordinators",
+    ctaLink: "#contact"
+  }
+];
+
+export const supportedHackathons = [
+  {
+    name: "Smart India Hackathon (SIH)",
+    circuit: "National Championship",
+    date: "Annual Season Schedule",
+    deadline: "Annual Notification",
+    link: "https://www.sih.gov.in/",
+    support: "Problem statement breakdown, hardware prototype guidance, team-matching, and internal screening defense.",
+    contact: "Pranay Meshram & Vishvajeet Singh"
+  },
+  {
+    name: "Inter-IISER Tech Meet & Hackathons",
+    circuit: "Pan-IISER Circuit",
+    date: "Annual Pan-IISER Circuit",
+    deadline: "Pre-Meet Qualifier Window",
+    link: "https://www.iiserb.ac.in",
+    support: "Hardware components loan, PCB design guidance, mock jury evaluations, and inter-departmental team pairing.",
+    contact: "Mohammad Ruvaifa & Agolika"
+  },
+  {
+    name: "Global AI & Open Source Hackathons (Devpost / Kaggle)",
+    circuit: "Global Open Source",
+    date: "Rolling / Year-Round",
+    deadline: "Continuous Hackathons",
+    link: "https://devpost.com/hackathons",
+    support: "GPU compute access advice, DiT/LLM pipeline review, API integration guidance, and demo preparation.",
+    contact: "Shafwan Safi & Anmol Agarwal"
+  }
+];
+
+export const competingTeams = [
+  {
+    teamName: "Team EECS Autonomous",
+    hackathon: "Autonomous Robotics & Micro-Mobility Challenge",
+    status: "Round 2 // Simulation & Kinematic Gait Testing",
+    members: [
+      { name: "Prashant Gupta", role: "Robotics & Controls", anchor: "#team-prashant" },
+      { name: "Shubham", role: "Sensors & Firmware", anchor: "#team-shubham" },
+      { name: "Prajyot Nula", role: "Computer Vision", anchor: "#team-prajyot" }
+    ],
+    repoLink: "https://rebelpg.github.io/project/"
+  },
+  {
+    teamName: "Team QuantFlux",
+    hackathon: "Algorithmic Trading & AI FinTech Summit",
+    status: "Deep RL Policy Optimization & Multi-Asset Backtesting",
+    members: [
+      { name: "Shafwan Safi", role: "Lead AI & Quant Dev", anchor: "#team-shafwan" },
+      { name: "Anmol Agarwal", role: "Neural Architectures", anchor: "#team-anmol" },
+      { name: "Gourangi Verma", role: "Mathematical Modeling", anchor: "#team-gourangi" }
+    ],
+    repoLink: "https://github.com/Shafwansafi06/DRL_Stock_Analyzer"
+  },
+  {
+    teamName: "Team SiliconFabric",
+    hackathon: "Micro-Fabrication & IoT Precision Engineering Challenge",
+    status: "Hardware Testing // Z-Axis Current Feedback Calibration",
+    members: [
+      { name: "Mohammad Ruvaifa", role: "Lead Systems & Hardware", anchor: "#team-ruvaifa" },
+      { name: "Ramandeep", role: "Electronics & 3D Prototyping", anchor: "#team-ramandeep" },
+      { name: "Aryan Sanjot", role: "Sensors & Physics Integration", anchor: "#team-aryan" }
+    ],
+    repoLink: "https://github.com/Ruvaifa/electro-lithography-system"
+  }
+];
+
 export const terminalEasterEggs = {
   "help": `Available commands:
   • help       - List available console commands
@@ -433,3 +605,4 @@ LOCATION: IISER Bhopal Cyber Node`,
 INSTAGRAM: @eecs_club_iiserb
 LINKEDIN: linkedin.com/company/eecsclub-iiserb/`
 };
+

@@ -21,18 +21,81 @@ document.addEventListener('DOMContentLoaded', () => {
   initTextScramble();
   initAnimations();
 
-  // 2. Multi-Theme Core Engine (Locked to Kanagawa Dragon by Default)
+  // 2. Multi-Theme Switcher System (5 Curated Themes)
+  const themeBtn = document.getElementById('theme-btn');
+  const themeMenu = document.getElementById('theme-menu');
+  const themeBtnIcon = document.getElementById('theme-btn-icon');
+  const themeBtnLabel = document.getElementById('theme-btn-label');
+  const hudTheme = document.getElementById('hud-theme');
+  const themeOptions = document.querySelectorAll('[data-set-theme]');
+
   function applyTheme(themeId) {
     if (!THEME_LABELS[themeId]) themeId = 'kanagawa';
     document.documentElement.setAttribute('data-theme', themeId);
     localStorage.setItem('eecs_theme', themeId);
+
+    // Update Button Label & Icon in Navbar
+    if (themeBtnIcon) themeBtnIcon.innerText = THEME_LABELS[themeId].icon;
+    if (themeBtnLabel) themeBtnLabel.innerText = THEME_LABELS[themeId].name;
+
+    // Update HUD Telemetry indicator if present
+    if (hudTheme) hudTheme.innerText = THEME_LABELS[themeId].name;
+
+    // Update active state on all theme buttons (navbar dropdown and mobile drawer)
+    document.querySelectorAll('[data-set-theme]').forEach((opt) => {
+      const match = opt.getAttribute('data-set-theme') === themeId;
+      opt.classList.toggle('active', match);
+      opt.setAttribute('aria-selected', match ? 'true' : 'false');
+    });
+
+    // Refresh canvas particle colors to match current theme
     setTimeout(() => {
       refreshCanvasTheme();
     }, 50);
   }
 
+  // Load saved theme or default to kanagawa
   const savedTheme = localStorage.getItem('eecs_theme') || 'kanagawa';
   applyTheme(savedTheme);
+
+  // Dropdown Toggle & Selection Handlers
+  if (themeBtn && themeMenu) {
+    themeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = themeMenu.classList.toggle('open');
+      themeBtn.setAttribute('aria-expanded', isOpen);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!themeBtn.contains(e.target) && !themeMenu.contains(e.target)) {
+        themeMenu.classList.remove('open');
+        themeBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && themeMenu.classList.contains('open')) {
+        themeMenu.classList.remove('open');
+        themeBtn.setAttribute('aria-expanded', 'false');
+        themeBtn.focus();
+      }
+    });
+  }
+
+  // Theme option clicks (for navbar dropdown and mobile drawer)
+  document.querySelectorAll('[data-set-theme]').forEach((opt) => {
+    opt.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const themeId = opt.getAttribute('data-set-theme');
+      applyTheme(themeId);
+      if (themeMenu) {
+        themeMenu.classList.remove('open');
+      }
+      if (themeBtn) {
+        themeBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
 
   // 3. Interactive Retro Lore Terminal Console
   initTerminalConsole(applyTheme);
@@ -87,9 +150,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxClose = document.getElementById('lightbox-close');
 
   if (lightbox && lightboxImg) {
-    document.querySelectorAll('.gallery-item').forEach((item) => {
+    document.querySelectorAll('.gallery-item, .achievement-img-wrapper').forEach((item) => {
       item.addEventListener('click', () => {
         const img = item.querySelector('img');
+        if (!img) return;
         const caption = item.getAttribute('data-caption') || img.getAttribute('alt');
         
         lightboxImg.src = img.src;
@@ -168,11 +232,23 @@ function initTerminalConsole(applyThemeFn) {
       response = `[TELEMETRY STATS]\n` +
         siteConfig.stats.map(s => `  ${s.label}: ${s.value}${s.suffix}`).join('\n');
     } else if (mainCmd === 'theme') {
-      if (arg && THEME_LABELS[arg]) {
+      if (!arg) {
+        const current = document.documentElement.getAttribute('data-theme') || 'kanagawa';
+        const currentName = THEME_LABELS[current] ? THEME_LABELS[current].name : current;
+        response = `[THEME CONTROLLER // 5 RETRO COLOR PALETTES]\n` +
+          `Active Theme: ${currentName}\n\n` +
+          `Available Themes:\n` +
+          `  • kanagawa    [🐲] Kanagawa Dragon ink & gold (Default)\n` +
+          `  • tokyo-night [🌃] Cyberpunk neon blue & purple\n` +
+          `  • gruvbox     [📻] Retro hacker terminal amber & green\n` +
+          `  • nord        [❄️] Arctic frost cyan & polar slate\n` +
+          `  • acid        [⚡] Acid high-contrast cyber gold & coral\n\n` +
+          `Type: "theme <name>" (e.g. "theme tokyo-night") or use the navbar [🎨] dropdown.`;
+      } else if (THEME_LABELS[arg]) {
         applyThemeFn(arg);
-        response = `[SUCCESS] Theme switched to "${THEME_LABELS[arg].name}".`;
+        response = `[SUCCESS] Theme palette switched to "${THEME_LABELS[arg].name}" ${THEME_LABELS[arg].icon}.\nDisplay variables, CSS styles, and circuit canvas recalibrated.`;
       } else {
-        response = `[ERROR] Invalid theme. Available: kanagawa, tokyo-night, gruvbox, nord, acid`;
+        response = `[ERROR] Unknown theme: "${arg}".\nAvailable: kanagawa, tokyo-night, gruvbox, nord, acid`;
       }
     } else {
       response = `Command not found: "${raw}". Type "help" for available commands.`;

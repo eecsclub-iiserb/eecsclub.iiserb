@@ -53,6 +53,7 @@
       <span class="hud-stat-chip">BUS: <strong id="hud-freq">24.00 MHz</strong></span>
     </div>
     <div class="hud-telemetry-right">
+      <span class="hud-stat-chip">THEME: <strong id="hud-theme">KANAGAWA</strong></span>
       <span class="hud-stat-chip">SYS: <strong>NOMINAL</strong></span>
       <span class="hud-stat-chip">TIME: <strong id="hud-clock">00:00:00 UTC</strong></span>
     </div>
@@ -93,7 +94,9 @@
   <!-- Site Content Wrapper -->
   <div class="site-wrapper">
 
-    <!-- Sticky Navigation Bar -->
+    <!-- ====================================================================
+         1. NAVBAR (Persistent, with jump links, socials, theme, & pinned CTA)
+         ==================================================================== -->
     <header class="navbar">
       <div class="nav-container">
         <a href="#home" class="nav-brand">
@@ -104,19 +107,82 @@
 
         <nav>
           <ul class="nav-links">
-            <li><a href="#home" class="nav-link active">Home</a></li>
             <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#team" class="nav-link">Team</a></li>
+            <li><a href="#achievements" class="nav-link">Achievements</a></li>
+            <li><a href="#events" class="nav-link">Events</a></li>
+            <li><a href="#hackathons" class="nav-link">Hackathons</a></li>
             <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#team" class="nav-link">Team</a></li>
             <li><a href="#gallery" class="nav-link">Gallery</a></li>
-            <li><a href="#resources" class="nav-link">Resources</a></li>
             <li><a href="#join" class="nav-link">Join Us</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
           </ul>
         </nav>
 
         <div class="nav-actions">
-          <a href="#join" class="nb-btn nb-btn-primary nb-btn-sm">
-            JOIN CLUB
+          
+          <!-- Theme Switcher Dropdown -->
+          <div class="theme-selector-wrapper">
+            <button id="theme-btn" class="theme-btn-current" aria-haspopup="true" aria-expanded="false" title="Switch Theme">
+              <span id="theme-btn-icon">🎨</span>
+              <span id="theme-btn-label">THEME</span>
+              <span style="font-size: 0.65rem;">▼</span>
+            </button>
+            <div id="theme-menu" class="theme-dropdown-menu" role="menu">
+              <button class="theme-option active" data-set-theme="kanagawa">
+                <span>[🐲] Kanagawa Dragon</span>
+                <span class="theme-preview-dots">
+                  <span class="theme-preview-dot" style="background:#c84053;"></span>
+                  <span class="theme-preview-dot" style="background:#e6c384;"></span>
+                  <span class="theme-preview-dot" style="background:#8a9a86;"></span>
+                </span>
+              </button>
+              <button class="theme-option" data-set-theme="tokyo-night">
+                <span>[🌃] Tokyo Night</span>
+                <span class="theme-preview-dots">
+                  <span class="theme-preview-dot" style="background:#7dcfff;"></span>
+                  <span class="theme-preview-dot" style="background:#bb9af7;"></span>
+                  <span class="theme-preview-dot" style="background:#f7768e;"></span>
+                </span>
+              </button>
+              <button class="theme-option" data-set-theme="gruvbox">
+                <span>[📻] Gruvbox Dark</span>
+                <span class="theme-preview-dots">
+                  <span class="theme-preview-dot" style="background:#fe8019;"></span>
+                  <span class="theme-preview-dot" style="background:#fabd2f;"></span>
+                  <span class="theme-preview-dot" style="background:#b8bb26;"></span>
+                </span>
+              </button>
+              <button class="theme-option" data-set-theme="nord">
+                <span>[❄️] Nord Arctic</span>
+                <span class="theme-preview-dots">
+                  <span class="theme-preview-dot" style="background:#88c0d0;"></span>
+                  <span class="theme-preview-dot" style="background:#81a1c1;"></span>
+                  <span class="theme-preview-dot" style="background:#ebcb8b;"></span>
+                </span>
+              </button>
+              <button class="theme-option" data-set-theme="acid">
+                <span>[⚡] Acid Neubrutal</span>
+                <span class="theme-preview-dots">
+                  <span class="theme-preview-dot" style="background:#ffe600;"></span>
+                  <span class="theme-preview-dot" style="background:#ff2a5f;"></span>
+                  <span class="theme-preview-dot" style="background:#00f0ff;"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Quick Socials in Navbar -->
+          <a href="https://www.linkedin.com/company/eecsclub-iiserb/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" style="width:34px;height:34px;" aria-label="LinkedIn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+          <a href="https://www.instagram.com/eecs_club_iiserb/" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" style="width:34px;height:34px;" aria-label="Instagram">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+
+          <!-- Pinned Right CTA -->
+          <a href="#join" class="nb-btn nb-btn-primary nb-btn-sm" style="white-space: nowrap;">
+            [⚡] JOIN US
           </a>
 
           <button id="mobile-toggle" class="mobile-nav-toggle font-pixel" aria-label="Toggle Navigation Menu">
@@ -128,16 +194,42 @@
 
     <!-- Mobile Navigation Drawer -->
     <div id="mobile-drawer" class="mobile-nav-drawer" aria-hidden="true">
+      <div class="mobile-theme-section">
+        <span class="font-mono" style="font-size: 0.72rem; color: var(--dragon-gold); display: block; margin-bottom: 0.6rem; letter-spacing: 0.05em; font-weight: 700;">
+          // COLOR THEMES:
+        </span>
+        <div class="mobile-theme-grid">
+          <button class="theme-option active" data-set-theme="kanagawa">
+            <span>[🐲] Kanagawa</span>
+          </button>
+          <button class="theme-option" data-set-theme="tokyo-night">
+            <span>[🌃] Tokyo Night</span>
+          </button>
+          <button class="theme-option" data-set-theme="gruvbox">
+            <span>[📻] Gruvbox</span>
+          </button>
+          <button class="theme-option" data-set-theme="nord">
+            <span>[❄️] Nord</span>
+          </button>
+          <button class="theme-option" data-set-theme="acid" style="grid-column: span 2;">
+            <span>[⚡] Acid Neubrutal</span>
+          </button>
+        </div>
+      </div>
       <a href="#home" class="nav-link">Home</a>
       <a href="#about" class="nav-link">About</a>
-      <a href="#team" class="nav-link">Team</a>
+      <a href="#achievements" class="nav-link">Achievements</a>
+      <a href="#events" class="nav-link">Events</a>
+      <a href="#hackathons" class="nav-link">Hackathons</a>
       <a href="#projects" class="nav-link">Projects</a>
+      <a href="#team" class="nav-link">Team</a>
       <a href="#gallery" class="nav-link">Gallery</a>
       <a href="#resources" class="nav-link">Resources</a>
       <a href="#join" class="nav-link">Join Us</a>
+      <a href="#contact" class="nav-link">Contact</a>
       <div style="padding-top: 0.5rem;">
         <a href="#join" class="nb-btn nb-btn-primary" style="width: 100%; text-align: center;">
-          JOIN THE CLUB
+          [⚡] JOIN THE CLUB
         </a>
       </div>
     </div>
@@ -146,7 +238,7 @@
     <main>
 
       <!-- ====================================================================
-           CHAPTER 00: HERO BOOT SEQUENCE (#home)
+           2. HERO SECTION (#home)
            ==================================================================== -->
       <section id="home" class="hero-section">
         <div class="container">
@@ -183,12 +275,20 @@
                 <span class="terminal-prompt"></span>Power the Future. Design Circuits. Engineer Tomorrow.
               </p>
 
+              <!-- Short 1-2 line intro -->
+              <p class="font-mono" style="font-size: 0.92rem; color: var(--text-white); line-height: 1.6; margin-bottom: 1.75rem; max-width: 620px;">
+                The official student-led engineering & research collective at IISER Bhopal. We turn deep scientific theory into working systems through hands-on electronics, cutting-edge AI architectures, and robotics.
+              </p>
+
               <div class="hero-cta-group">
                 <a href="#join" class="nb-btn nb-btn-primary">
-                  [⚡] JOIN THE CLUB
+                  [⚡] JOIN US
                 </a>
-                <a href="#projects" class="nb-btn nb-btn-gold">
-                  [📂] VIEW PROJECTS
+                <a href="#achievements" class="nb-btn nb-btn-gold">
+                  [🏆] SEE ACHIEVEMENTS
+                </a>
+                <a href="#projects" class="nb-btn nb-btn-outline">
+                  [📂] EXPLORE PROJECTS
                 </a>
               </div>
 
@@ -204,10 +304,35 @@
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                 </a>
 
+                <a href="https://github.com/iiserb-eecs-club" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" aria-label="GitHub Organization">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+
                 <a href="mailto:eecs.club.official@gmail.com" class="nb-icon-btn" aria-label="Email Official">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                 </a>
               </div>
+
+              <!-- Quick Stats Strip (Teaser for Achievements) -->
+              <div class="hero-stats-strip">
+                <div class="hero-stat-card">
+                  <span class="hero-stat-number">20+</span>
+                  <span class="hero-stat-label">Core Builders</span>
+                </div>
+                <div class="hero-stat-card">
+                  <span class="hero-stat-number">6+</span>
+                  <span class="hero-stat-label">Projects Shipped</span>
+                </div>
+                <div class="hero-stat-card">
+                  <span class="hero-stat-number">10+</span>
+                  <span class="hero-stat-label">Events & Hacks</span>
+                </div>
+                <div class="hero-stat-card">
+                  <span class="hero-stat-number">2024</span>
+                  <span class="hero-stat-label">Est. IISERB</span>
+                </div>
+              </div>
+
             </div>
 
             <!-- Right Hero Column: Next Event Terminal Card -->
@@ -278,7 +403,7 @@
       </section>
 
       <!-- ====================================================================
-           CHAPTER 01: DIRECTIVE & MISSION (#about)
+           3. ABOUT SECTION (#about)
            ==================================================================== -->
       <section id="about" class="section">
         <div class="container">
@@ -300,15 +425,15 @@
             <p class="retro-subtitle">Fostering innovation and technical excellence at IISER Bhopal since 2024.</p>
           </div>
 
-          <!-- Three Core Pillars -->
-          <div class="pillars-grid">
+          <!-- Four Core Pillars / Ideology Cards -->
+          <div class="pillars-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
             
             <div class="nb-card nb-card-accent-gold">
               <div class="nb-card-body">
                 <div class="pillar-icon-box">💡</div>
                 <h3 class="pillar-title">Innovation</h3>
                 <p class="pillar-desc">
-                  We encourage creative thinking and problem-solving through hands-on projects and collaborative workshops.
+                  We encourage creative thinking and problem-solving through hands-on projects, novel architectures, and collaborative workshops.
                 </p>
               </div>
             </div>
@@ -316,9 +441,9 @@
             <div class="nb-card nb-card-accent-red">
               <div class="nb-card-body">
                 <div class="pillar-icon-box">💻</div>
-                <h3 class="pillar-title">Technical Skills</h3>
+                <h3 class="pillar-title">Technical Rigor</h3>
                 <p class="pillar-desc">
-                  Develop expertise in programming, electronics, machine learning, and other cutting-edge technologies.
+                  Develop deep expertise in programming, electronics, machine learning, robotics, and cutting-edge engineering toolchains.
                 </p>
               </div>
             </div>
@@ -326,16 +451,26 @@
             <div class="nb-card nb-card-accent-green">
               <div class="nb-card-body">
                 <div class="pillar-icon-box">👥</div>
-                <h3 class="pillar-title">Community</h3>
+                <h3 class="pillar-title">Open Community</h3>
                 <p class="pillar-desc">
-                  Connect with like-minded peers, mentors, and industry professionals in a supportive learning environment.
+                  Connect with like-minded peers, mentors, and faculty across physics, chemistry, biology, math, and computer science in an inclusive learning environment.
+                </p>
+              </div>
+            </div>
+
+            <div class="nb-card nb-card-accent-aqua">
+              <div class="nb-card-body">
+                <div class="pillar-icon-box">🛠️</div>
+                <h3 class="pillar-title">Hands-on Culture</h3>
+                <p class="pillar-desc">
+                  We believe engineering begins where theory meets action. We provide workbenches, microcontrollers, and sensors to build, test, and ship real systems.
                 </p>
               </div>
             </div>
 
           </div>
 
-          <!-- Mission & What We Do Grid -->
+          <!-- Mission & Activities Grid -->
           <div class="about-mission-grid">
             
             <div class="nb-card nb-card-accent-aqua">
@@ -343,10 +478,10 @@
                 <span class="nb-tag nb-tag-aqua">DIRECTIVE // MISSION</span>
               </div>
               <div class="nb-card-body">
-                <h3 class="font-pixel" style="font-size: 1.15rem; color: var(--text-old-white); margin-bottom: 1rem;">
+                <h3 class="font-pixel" style="font-size: 1.2rem; color: var(--text-old-white); margin-bottom: 1rem;">
                   Our <span style="color: var(--dragon-aqua);">Mission</span>
                 </h3>
-                <p style="font-size: 0.95rem; color: var(--text-white); line-height: 1.7; margin-bottom: 1.5rem;">
+                <p style="font-size: 0.96rem; color: var(--text-white); line-height: 1.7; margin-bottom: 1.5rem;">
                   To create a vibrant community of tech enthusiasts who collaborate, learn, and build innovative solutions to real-world problems.
                 </p>
 
@@ -354,53 +489,200 @@
                   [>] WHAT WE DO:
                 </h4>
                 <ul class="mission-activity-list">
-                  <li class="mission-activity-item">Organize workshops and training sessions</li>
-                  <li class="mission-activity-item">Host hackathons and coding competitions</li>
-                  <li class="mission-activity-item">Develop collaborative projects</li>
-                  <li class="mission-activity-item">Connect with industry experts</li>
-                  <li class="mission-activity-item">Provide mentorship and resources</li>
+                  <li class="mission-activity-item">Organize workshops, bootcamps, and technical training sessions</li>
+                  <li class="mission-activity-item">Host hackathons, project exhibitions, and coding competitions</li>
+                  <li class="mission-activity-item">Develop collaborative open-source and hardware research projects</li>
+                  <li class="mission-activity-item">Connect with industry experts, alumni, and faculty researchers</li>
+                  <li class="mission-activity-item">Provide hardware inventory loans, compute guidance, and peer mentorship</li>
                 </ul>
+
+                <!-- Why Join Mini-Pitch Lead-in -->
+                <div style="margin-top: 1.5rem; padding: 1rem; background-color: var(--bg-deep-ink); border: 2px solid var(--border-color); border-left: 4px solid var(--dragon-gold);">
+                  <p class="font-pixel" style="font-size: 0.8rem; color: var(--dragon-gold); margin-bottom: 0.35rem;">
+                    WHY JOIN EECS?
+                  </p>
+                  <p class="font-mono" style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 0.75rem;">
+                    Gain hands-on hardware lab access, join active national hackathon squads, receive direct mentorship from senior researchers and faculty, and transform theory into tangible engineering achievements.
+                  </p>
+                  <a href="#join" class="nb-btn nb-btn-gold nb-btn-sm">
+                    [⚡] EXPLORE HOW TO JOIN
+                  </a>
+                </div>
               </div>
             </div>
 
-            <!-- Core Focus & Technical Domains Blueprint Card -->
-            <div class="nb-card nb-card-accent-gold">
-              <div class="nb-card-header">
-                <span class="nb-tag nb-tag-gold">BLUEPRINT // CORE DOMAINS</span>
-                <span class="font-mono" style="font-size: 0.75rem; color: var(--text-dim);">SYSTEM_SPEC_v2</span>
+            <!-- Workspace Visual Image -->
+            <div class="about-image-wrapper">
+              <img src="assets/ourcrew.webp" alt="EECS Club Team members collaborating at IISER Bhopal" loading="lazy" />
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           4. ACHIEVEMENTS SECTION (#achievements)
+           ==================================================================== -->
+      <section id="achievements" class="section">
+        <div class="container">
+
+          <div class="section-header">
+            <div class="section-tag">// 0x02_TRACK_RECORD</div>
+            <h2 class="retro-title">Club <span data-scramble style="color: var(--dragon-gold);">Achievements</span></h2>
+            <p class="retro-subtitle">Framed as accomplishments from our last tenure: shipped hardware, AI models, and flagship events.</p>
+          </div>
+
+          <!-- Stat Counters Strip -->
+          <div class="stat-counters-grid">
+            <div class="stat-counter-card">
+              <div class="stat-counter-number">6+</div>
+              <div class="stat-counter-label">Projects Shipped</div>
+              <div class="stat-counter-sub">Hardware & AI Models</div>
+            </div>
+            <div class="stat-counter-card">
+              <div class="stat-counter-number">4+</div>
+              <div class="stat-counter-label">Campus Events</div>
+              <div class="stat-counter-sub">Auditorium & Lab Expos</div>
+            </div>
+            <div class="stat-counter-card">
+              <div class="stat-counter-number">250+</div>
+              <div class="stat-counter-label">Students Impacted</div>
+              <div class="stat-counter-sub">Across All Disciplines</div>
+            </div>
+            <div class="stat-counter-card">
+              <div class="stat-counter-number">100%</div>
+              <div class="stat-counter-label">Student-Driven</div>
+              <div class="stat-counter-sub">Peer-to-Peer Engineering</div>
+            </div>
+          </div>
+
+          <!-- Achievements Grid -->
+          <div class="achievements-grid">
+
+            <!-- 1. IISERB Got Latent -->
+            <div class="nb-card nb-card-accent-red achievement-card">
+              <div class="achievement-img-wrapper">
+                <img src="assets/Latency_judge.webp" alt="IISERB Got Latent Flagship" class="achievement-img" loading="lazy" />
               </div>
-              <div class="nb-card-body" style="display: flex; flex-direction: column; gap: 1rem;">
-                
-                <div style="background-color: var(--bg-deep-ink); border: 2px solid var(--border-color); padding: 0.9rem;">
-                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem;">
-                    <span class="font-pixel" style="font-size: 0.8rem; color: var(--dragon-gold);">[01] SILICON & HARDWARE</span>
-                    <span class="nb-tag nb-tag-dark" style="font-size: 0.65rem;">HARDWARE</span>
-                  </div>
-                  <p class="font-mono" style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5;">
-                    Microcontrollers (ESP32 / Arduino), VLSI, PCB routing, sensor matrices, robotics control, and IoT systems.
-                  </p>
+              <div class="achievement-card-body">
+                <span class="achievement-tenure-tag">
+                  <span class="led-indicator led-red"></span>
+                  2024–2025 TENURE // CAMPUS EVENT
+                </span>
+                <h3 class="achievement-title">IISERB Got Latent Flagship</h3>
+                <p class="achievement-desc">
+                  Orchestrated IISER Bhopal's premier campus tech talent and project showcase featuring live onstage demos, an interactive digital scoreboard, a distinguished panel of judges, and packed auditorium participation.
+                </p>
+                <div class="achievement-credits">
+                  <span>Credits: <strong>EECS Organizing Crew</strong></span>
+                  <a href="#gallery" class="nb-btn nb-btn-ghost nb-btn-sm">[👁] Gallery Proof</a>
                 </div>
+              </div>
+            </div>
 
-                <div style="background-color: var(--bg-deep-ink); border: 2px solid var(--border-color); padding: 0.9rem;">
-                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem;">
-                    <span class="font-pixel" style="font-size: 0.8rem; color: var(--dragon-red-bright);">[02] INTELLIGENT SYSTEMS</span>
-                    <span class="nb-tag nb-tag-dark" style="font-size: 0.65rem;">AI / ML</span>
-                  </div>
-                  <p class="font-mono" style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5;">
-                    Diffusion Transformers, Deep Reinforcement Learning, Computer Vision, algorithmic trading, and PyTorch models.
-                  </p>
+            <!-- 2. Spark Tank Prototyping Expo -->
+            <div class="nb-card nb-card-accent-gold achievement-card">
+              <div class="achievement-img-wrapper">
+                <img src="assets/spark_tank.webp" alt="Spark Tank Hardware Prototyping" class="achievement-img" loading="lazy" />
+              </div>
+              <div class="achievement-card-body">
+                <span class="achievement-tenure-tag">
+                  <span class="led-indicator led-gold"></span>
+                  2024–2025 TENURE // HACKATHON & EXPO
+                </span>
+                <h3 class="achievement-title">Spark Tank Hardware Expo</h3>
+                <p class="achievement-desc">
+                  Interactive electronics exhibition and pitching platform where student builders demonstrated working embedded circuits, robotics prototypes, and IoT sensor arrays evaluated by faculty and peer juries.
+                </p>
+                <div class="achievement-credits">
+                  <span>Credits: <strong>Hardware & Robotics Team</strong></span>
+                  <a href="#gallery" class="nb-btn nb-btn-ghost nb-btn-sm">[👁] Gallery Proof</a>
                 </div>
+              </div>
+            </div>
 
-                <div style="background-color: var(--bg-deep-ink); border: 2px solid var(--border-color); padding: 0.9rem;">
-                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem;">
-                    <span class="font-pixel" style="font-size: 0.8rem; color: var(--dragon-aqua);">[03] APPLIED COMPUTING</span>
-                    <span class="nb-tag nb-tag-dark" style="font-size: 0.65rem;">SOFTWARE</span>
-                  </div>
-                  <p class="font-mono" style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5;">
-                    Real-time C++ OpenGL physics simulation engines, fullstack web architectures, and quantitative engineering toolchains.
-                  </p>
+            <!-- 3. DreamLab DiT Video Model -->
+            <div class="nb-card nb-card-accent-aqua achievement-card">
+              <div class="achievement-img-wrapper">
+                <img src="assets/anmol_projimage.webp" alt="DreamLab Video DiT" class="achievement-img" loading="lazy" />
+              </div>
+              <div class="achievement-card-body">
+                <span class="achievement-tenure-tag">
+                  <span class="led-indicator led-green"></span>
+                  2024–2025 TENURE // RESEARCH SHIPPED
+                </span>
+                <h3 class="achievement-title">DreamLab Video DiT Shipped</h3>
+                <p class="achievement-desc">
+                  Engineered and published a localized text-to-video Diffusion Transformer (DiT) architecture with spatio-temporal attention, perceptual reconstruction loss minimization, and CLIP text conditioning.
+                </p>
+                <div class="achievement-credits">
+                  <span>Lead: <strong>Anmol Agarwal</strong></span>
+                  <a href="#projects" class="nb-btn nb-btn-ghost nb-btn-sm">[💻] View Project</a>
                 </div>
+              </div>
+            </div>
 
+            <!-- 4. Sub-Micron ELS System -->
+            <div class="nb-card nb-card-accent-gold achievement-card">
+              <div class="achievement-img-wrapper">
+                <img src="assets/ELS_image.webp" alt="Electro-Lithography System" class="achievement-img" loading="lazy" />
+              </div>
+              <div class="achievement-card-body">
+                <span class="achievement-tenure-tag">
+                  <span class="led-indicator led-gold"></span>
+                  2024–2025 TENURE // HARDWARE FABRICATION
+                </span>
+                <h3 class="achievement-title">Sub-Micron Lithography System</h3>
+                <p class="achievement-desc">
+                  Fabricated a custom precision probe apparatus with real-time Z-axis electrical current feedback, enabling micron-level and sub-micron surface micro-patterning on sensitive substrates.
+                </p>
+                <div class="achievement-credits">
+                  <span>Lead: <strong>Mohammad Ruvaifa</strong></span>
+                  <a href="#projects" class="nb-btn nb-btn-ghost nb-btn-sm">[💻] View Project</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. PGNTA 17-DOF Humanoid -->
+            <div class="nb-card nb-card-accent-green achievement-card">
+              <div class="achievement-img-wrapper">
+                <img src="assets/PGNTA_image.webp" alt="PGNTA Humanoid Robot" class="achievement-img" loading="lazy" />
+              </div>
+              <div class="achievement-card-body">
+                <span class="achievement-tenure-tag">
+                  <span class="led-indicator led-green"></span>
+                  2024–2025 TENURE // ROBOTICS MILESTONE
+                </span>
+                <h3 class="achievement-title">PGNTA: 17-DOF Humanoid Robot</h3>
+                <p class="achievement-desc">
+                  Engineered a functional bipedal walking humanoid robot utilizing laser-cut wood, ESP32 microcontrollers, servo arrays, and custom kinematic stabilization algorithms developed from scratch.
+                </p>
+                <div class="achievement-credits">
+                  <span>Lead: <strong>Prashant Gupta</strong></span>
+                  <a href="#projects" class="nb-btn nb-btn-ghost nb-btn-sm">[💻] View Project</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6. Professor Technical Colloquiums -->
+            <div class="nb-card nb-card-accent-red achievement-card">
+              <div class="achievement-img-wrapper">
+                <img src="assets/volatile_mem.webp" alt="Faculty Lectures" class="achievement-img" loading="lazy" />
+              </div>
+              <div class="achievement-card-body">
+                <span class="achievement-tenure-tag">
+                  <span class="led-indicator led-red"></span>
+                  2024–2025 TENURE // ACADEMIC COLLOQUIUM
+                </span>
+                <h3 class="achievement-title">Faculty Colloquiums on Memory</h3>
+                <p class="achievement-desc">
+                  Organized masterclass academic seminars on Volatile Memory architectures, emerging non-von-Neumann computing, and semiconductor physics delivered by esteemed IISERB faculty mentors.
+                </p>
+                <div class="achievement-credits">
+                  <span>Credits: <strong>Academic & Seminar Team</strong></span>
+                  <a href="#gallery" class="nb-btn nb-btn-ghost nb-btn-sm">[👁] Gallery Proof</a>
+                </div>
               </div>
             </div>
 
@@ -410,7 +692,639 @@
       </section>
 
       <!-- ====================================================================
-           CHAPTER 02: RESEARCH ROSTER & TEAM (#team)
+           5. UPCOMING EVENTS SECTION (#events)
+           ==================================================================== -->
+      <section id="events" class="section">
+        <div class="container">
+
+          <div class="section-header">
+            <div class="section-tag">// 0x03_SCHEDULE</div>
+            <h2 class="retro-title">Upcoming <span data-scramble style="color: var(--dragon-gold);">Events</span></h2>
+            <p class="retro-subtitle">Workshops, talks, sessions, and orientations organized by the EECS Club.</p>
+          </div>
+
+          <!-- Events Grid -->
+          <div class="events-grid">
+
+            <!-- Event 1: Trainee Induction -->
+            <div class="nb-card nb-card-accent-red event-card">
+              <div class="nb-card-header">
+                <span class="nb-tag nb-tag-red">RECRUITMENT // INDUCTION</span>
+                <span class="nb-tag nb-tag-dark" style="font-size: 0.68rem;">TENURE CYCLE</span>
+              </div>
+              <div class="event-card-body">
+                <h3 class="event-card-title">Trainee Applications & Induction 2025–26</h3>
+                
+                <div class="event-meta-list">
+                  <div class="event-meta-item">
+                    <span style="color: var(--dragon-red-bright);">[📅]</span>
+                    <span>Sept 15, 2025 • 2:30 PM to Sept 26, 2025 • 6:30 PM</span>
+                  </div>
+                  <div class="event-meta-item">
+                    <span style="color: var(--dragon-green-bright);">[🌐]</span>
+                    <span>VENUE: ONLINE / IISER Bhopal Campus</span>
+                  </div>
+                </div>
+
+                <p class="event-card-desc">
+                  Annual club recruitment window welcoming enthusiastic student builders, hardware tinkerers, programmers, and designers across all BS-MS, Engineering Sciences, and Economic Sciences departments.
+                </p>
+
+                <div class="event-card-actions">
+                  <span class="nb-tag nb-tag-dark">Status: Closed (Upcoming Next Cycle)</span>
+                  <a href="#join" class="nb-btn nb-btn-primary nb-btn-sm">
+                    [⚡] Learn More & Inquire
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Event 2: Hardware Bootcamp -->
+            <div class="nb-card nb-card-accent-gold event-card">
+              <div class="nb-card-header">
+                <span class="nb-tag nb-tag-gold">HANDS-ON WORKSHOP</span>
+                <span class="nb-tag nb-tag-green" style="font-size: 0.68rem;">
+                  <span class="led-indicator led-green"></span> OPEN SOON
+                </span>
+              </div>
+              <div class="event-card-body">
+                <h3 class="event-card-title">Hands-on Microcontrollers & IoT Bootcamp</h3>
+                
+                <div class="event-meta-list">
+                  <div class="event-meta-item">
+                    <span style="color: var(--dragon-gold);">[📅]</span>
+                    <span>Upcoming Semester • Weekend Intensive Bootcamp</span>
+                  </div>
+                  <div class="event-meta-item">
+                    <span style="color: var(--dragon-aqua);">[🏢]</span>
+                    <span>VENUE: EECS Hardware Laboratory, IISERB</span>
+                  </div>
+                </div>
+
+                <p class="event-card-desc">
+                  Direct hands-on workbench training with ESP32 microcontrollers, GPIO sensors, I2C/SPI bus architectures, telemetry transmission, and C++ embedded firmware programming. Hardware kits provided.
+                </p>
+
+                <div class="event-card-actions">
+                  <span class="nb-tag nb-tag-green">Status: Upcoming Registration</span>
+                  <a href="#join" class="nb-btn nb-btn-gold nb-btn-sm">
+                    [+] Register Interest
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Event 3: Got Latent Season 2 -->
+            <div class="nb-card nb-card-accent-aqua event-card">
+              <div class="nb-card-header">
+                <span class="nb-tag nb-tag-aqua">FLAGSHIP COMPETITION</span>
+                <span class="nb-tag nb-tag-gold" style="font-size: 0.68rem;">ANNUAL SHOWDOWN</span>
+              </div>
+              <div class="event-card-body">
+                <h3 class="event-card-title">IISERB Got Latent: Season 2</h3>
+                
+                <div class="event-meta-list">
+                  <div class="event-meta-item">
+                    <span style="color: var(--dragon-red-bright);">[📅]</span>
+                    <span>Spring Flagship 2026 • Dates Announced Soon</span>
+                  </div>
+                  <div class="event-meta-item">
+                    <span style="color: var(--dragon-green-bright);">[🎭]</span>
+                    <span>VENUE: Main Auditorium, IISER Bhopal</span>
+                  </div>
+                </div>
+
+                <p class="event-card-desc">
+                  The much-anticipated return of our premier campus tech showdown: live hardware prototyping battles, algorithmic problem solving, creative engineering hacks, and interactive audience-jury scoring.
+                </p>
+
+                <div class="event-card-actions">
+                  <span class="nb-tag nb-tag-gold">Status: In Planning</span>
+                  <a href="#gallery" class="nb-btn nb-btn-ghost nb-btn-sm">
+                    [👁] View Past Recap
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Event 4: Frontier Talk Series -->
+            <div class="nb-card nb-card-accent-green event-card">
+              <div class="nb-card-header">
+                <span class="nb-tag nb-tag-green">ACADEMIC COLLOQUIUM</span>
+                <span class="nb-tag nb-tag-dark" style="font-size: 0.68rem;">RESEARCH SEMINAR</span>
+              </div>
+              <div class="event-card-body">
+                <h3 class="event-card-title">Frontier Talk: Neuromorphic & Quantum Compute</h3>
+                
+                <div class="event-meta-list">
+                  <div class="event-meta-item">
+                    <span style="color: var(--dragon-gold);">[📅]</span>
+                    <span>Monthly Academic Series • 4:30 PM IST</span>
+                  </div>
+                  <div class="event-meta-item">
+                    <span style="color: var(--dragon-aqua);">[🏛️]</span>
+                    <span>VENUE: Lecture Hall Complex / Hybrid Streaming</span>
+                  </div>
+                </div>
+
+                <p class="event-card-desc">
+                  Deep-dive academic seminars by faculty mentors exploring non-von-Neumann computing paradigms, memory devices, spiking neural networks, and quantum silicon devices.
+                </p>
+
+                <div class="event-card-actions">
+                  <span class="nb-tag nb-tag-aqua">Status: Open to All</span>
+                  <a href="#contact" class="nb-btn nb-btn-outline nb-btn-sm">
+                    [✉] Contact Coordinators
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           6. HACKATHONS SECTION (#hackathons)
+           Structurally separated into 6a (Club Supports) & 6b (Teams Competing)
+           ==================================================================== -->
+      <section id="hackathons" class="section">
+        <div class="container">
+
+          <div class="section-header">
+            <div class="section-tag">// 0x04_HACKATHONS</div>
+            <h2 class="retro-title">Hackathons & <span data-scramble style="color: var(--dragon-gold);">Competitions</span></h2>
+            <p class="retro-subtitle">External hackathons open to all IISERB students, and the active squads representing our club.</p>
+          </div>
+
+          <!-- ----------------------------------------------------------------
+               6a. HACKATHONS THE CLUB SUPPORTS (EXTERNAL, OPEN TO ALL)
+               ---------------------------------------------------------------- -->
+          <div class="hackathon-subpart">
+            <div class="hackathon-subpart-header">
+              <h3 class="hackathon-subpart-title">
+                <span>[🌐] 6A. HACKATHONS WE SUPPORT (OPEN TO ALL IISERB STUDENTS)</span>
+              </h3>
+              <p class="hackathon-subpart-desc">
+                Looking to compete in national or global hackathons? EECS Club provides problem statement breakdown, hardware component loans, compute guidance, mock pitch defense, and team-matching support for all IISER Bhopal students.
+              </p>
+            </div>
+
+            <div class="hackathons-supported-grid">
+
+              <!-- SIH -->
+              <div class="nb-card nb-card-accent-gold hackathon-card">
+                <div class="nb-card-header">
+                  <span class="nb-tag nb-tag-gold">NATIONAL CHAMPIONSHIP</span>
+                  <span class="font-mono" style="font-size: 0.72rem; color: var(--text-dim);">SIH 2025</span>
+                </div>
+                <div class="nb-card-body" style="display: flex; flex-direction: column; flex-grow: 1;">
+                  <h4 class="font-pixel" style="font-size: 0.95rem; color: var(--text-old-white); margin-bottom: 0.5rem;">
+                    Smart India Hackathon (SIH)
+                  </h4>
+                  <div class="event-meta-list" style="margin-bottom: 0.75rem;">
+                    <div class="event-meta-item">
+                      <span style="color: var(--dragon-gold);">[📅]</span>
+                      <span>Timeline: Annual National Schedule</span>
+                    </div>
+                    <div class="event-meta-item">
+                      <span style="color: var(--dragon-green-bright);">[⏰]</span>
+                      <span>Deadline: Annual MHRD Notification</span>
+                    </div>
+                  </div>
+                  
+                  <div class="hackathon-support-box">
+                    <strong style="color: var(--dragon-gold); display: block; margin-bottom: 0.25rem;">[>] Club Support Offered:</strong>
+                    Problem statement breakdown, internal institute screening defense, multidisciplinary team matching, and circuit prototyping assistance.
+                  </div>
+
+                  <div class="hackathon-contact-row">
+                    <span>Contact: <strong>Pranay Meshram & Vishvajeet Singh</strong></span>
+                    <a href="https://www.sih.gov.in/" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-gold nb-btn-sm">
+                      [🌐] Portal
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Inter-IISER Tech Meet -->
+              <div class="nb-card nb-card-accent-red hackathon-card">
+                <div class="nb-card-header">
+                  <span class="nb-tag nb-tag-red">PAN-IISER CIRCUIT</span>
+                  <span class="font-mono" style="font-size: 0.72rem; color: var(--text-dim);">Annual Meet</span>
+                </div>
+                <div class="nb-card-body" style="display: flex; flex-direction: column; flex-grow: 1;">
+                  <h4 class="font-pixel" style="font-size: 0.95rem; color: var(--text-old-white); margin-bottom: 0.5rem;">
+                    Inter-IISER Tech Meet & Hackathons
+                  </h4>
+                  <div class="event-meta-list" style="margin-bottom: 0.75rem;">
+                    <div class="event-meta-item">
+                      <span style="color: var(--dragon-red-bright);">[📅]</span>
+                      <span>Timeline: Annual Pan-IISER Circuit</span>
+                    </div>
+                    <div class="event-meta-item">
+                      <span style="color: var(--dragon-green-bright);">[⏰]</span>
+                      <span>Deadline: Campus Qualifier Window</span>
+                    </div>
+                  </div>
+                  
+                  <div class="hackathon-support-box">
+                    <strong style="color: var(--dragon-gold); display: block; margin-bottom: 0.25rem;">[>] Club Support Offered:</strong>
+                    Component loans from club lab inventory, sensor testing kits, mock jury presentation rounds, and software-hardware co-design mentorship.
+                  </div>
+
+                  <div class="hackathon-contact-row">
+                    <span>Contact: <strong>Mohammad Ruvaifa & Agolika</strong></span>
+                    <a href="https://www.iiserb.ac.in" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-primary nb-btn-sm">
+                      [🌐] IISERB Info
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Devpost & Open Source Hackathons -->
+              <div class="nb-card nb-card-accent-aqua hackathon-card">
+                <div class="nb-card-header">
+                  <span class="nb-tag nb-tag-aqua">GLOBAL OPEN SOURCE</span>
+                  <span class="font-mono" style="font-size: 0.72rem; color: var(--text-dim);">Devpost / Kaggle</span>
+                </div>
+                <div class="nb-card-body" style="display: flex; flex-direction: column; flex-grow: 1;">
+                  <h4 class="font-pixel" style="font-size: 0.95rem; color: var(--text-old-white); margin-bottom: 0.5rem;">
+                    Global AI & Cloud Hackathons
+                  </h4>
+                  <div class="event-meta-list" style="margin-bottom: 0.75rem;">
+                    <div class="event-meta-item">
+                      <span style="color: var(--dragon-aqua);">[📅]</span>
+                      <span>Timeline: Rolling / Year-Round</span>
+                    </div>
+                    <div class="event-meta-item">
+                      <span style="color: var(--dragon-gold);">[⏰]</span>
+                      <span>Deadline: Continuous Submission</span>
+                    </div>
+                  </div>
+                  
+                  <div class="hackathon-support-box">
+                    <strong style="color: var(--dragon-gold); display: block; margin-bottom: 0.25rem;">[>] Club Support Offered:</strong>
+                    Compute guidance, DiT and LLM pipeline architectural review, API access navigation, and live web demo deployment assistance.
+                  </div>
+
+                  <div class="hackathon-contact-row">
+                    <span>Contact: <strong>Shafwan Safi & Anmol Agarwal</strong></span>
+                    <a href="https://devpost.com/hackathons" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-ghost nb-btn-sm">
+                      [🌐] Devpost
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ----------------------------------------------------------------
+               6b. HACKATHONS THE CLUB'S TEAMS ARE CURRENTLY COMPETING IN
+               ---------------------------------------------------------------- -->
+          <div class="hackathon-subpart" style="margin-top: 3.5rem;">
+            <div class="hackathon-subpart-header" style="border-left-color: var(--dragon-gold);">
+              <h3 class="hackathon-subpart-title">
+                <span>[⚡] 6B. EECS CLUB TEAMS CURRENTLY COMPETING</span>
+              </h3>
+              <p class="hackathon-subpart-desc">
+                Our dedicated student squads are actively building, debugging, and representing EECS Club and IISER Bhopal in premier competitive arenas. Click any team member to view their complete profile card below.
+              </p>
+            </div>
+
+            <div class="active-teams-grid">
+
+              <!-- Team 1 -->
+              <div class="nb-card nb-card-accent-green active-team-card">
+                <div class="nb-card-header">
+                  <span class="nb-tag nb-tag-green">TEAM EECS AUTONOMOUS</span>
+                  <span class="font-mono" style="font-size: 0.72rem; color: var(--dragon-gold);">Robotics</span>
+                </div>
+                <div class="nb-card-body" style="display: flex; flex-direction: column; flex-grow: 1;">
+                  <h4 class="font-pixel" style="font-size: 0.92rem; color: var(--text-old-white); margin-bottom: 0.35rem;">
+                    Autonomous Robotics & Micro-Mobility
+                  </h4>
+                  <p class="font-mono" style="font-size: 0.78rem; color: var(--dragon-green-bright); margin-bottom: 0.85rem;">
+                    Status: <strong>Round 2 // Kinematic Gait Testing</strong>
+                  </p>
+
+                  <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 0.75rem;">
+                    Developing adaptive stabilization and obstacle-avoidance telemetry for bipedal and multi-wheeled micro-mobility chassis.
+                  </p>
+
+                  <div style="margin-bottom: 1rem;">
+                    <span class="font-mono" style="font-size: 0.72rem; color: var(--text-dim); display: block; margin-bottom: 0.35rem;">
+                      TEAM MEMBERS (LINK TO TEAM):
+                    </span>
+                    <div class="team-members-pills">
+                      <a href="#team-prashant" class="team-member-pill">[👤] Prashant Gupta</a>
+                      <a href="#team-shubham" class="team-member-pill">[👤] Shubham</a>
+                      <a href="#team-prajyot" class="team-member-pill">[👤] Prajyot Nula</a>
+                    </div>
+                  </div>
+
+                  <div style="margin-top: auto; padding-top: 0.75rem; border-top: 1px solid var(--border-color);">
+                    <a href="https://rebelpg.github.io/project/" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-ghost nb-btn-sm" style="width: 100%;">
+                      [📂] Public Docs & Prototype Repo
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Team 2 -->
+              <div class="nb-card nb-card-accent-red active-team-card">
+                <div class="nb-card-header">
+                  <span class="nb-tag nb-tag-red">TEAM QUANTFLUX</span>
+                  <span class="font-mono" style="font-size: 0.72rem; color: var(--dragon-gold);">AI & FinTech</span>
+                </div>
+                <div class="nb-card-body" style="display: flex; flex-direction: column; flex-grow: 1;">
+                  <h4 class="font-pixel" style="font-size: 0.92rem; color: var(--text-old-white); margin-bottom: 0.35rem;">
+                    Algorithmic Trading & AI Summit
+                  </h4>
+                  <p class="font-mono" style="font-size: 0.78rem; color: var(--dragon-red-bright); margin-bottom: 0.85rem;">
+                    Status: <strong>Deep RL Policy Optimization & Backtesting</strong>
+                  </p>
+
+                  <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 0.75rem;">
+                    Building Deep Reinforcement Learning agents for dynamic multi-asset portfolio balancing and risk-adjusted volatility backtesting.
+                  </p>
+
+                  <div style="margin-bottom: 1rem;">
+                    <span class="font-mono" style="font-size: 0.72rem; color: var(--text-dim); display: block; margin-bottom: 0.35rem;">
+                      TEAM MEMBERS (LINK TO TEAM):
+                    </span>
+                    <div class="team-members-pills">
+                      <a href="#team-shafwan" class="team-member-pill">[👤] Shafwan Safi</a>
+                      <a href="#team-anmol" class="team-member-pill">[👤] Anmol Agarwal</a>
+                      <a href="#team-gourangi" class="team-member-pill">[👤] Gourangi Verma</a>
+                    </div>
+                  </div>
+
+                  <div style="margin-top: auto; padding-top: 0.75rem; border-top: 1px solid var(--border-color);">
+                    <a href="https://github.com/Shafwansafi06/DRL_Stock_Analyzer" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-ghost nb-btn-sm" style="width: 100%;">
+                      [💻] Public Repo // DRL Stock Analyzer
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Team 3 -->
+              <div class="nb-card nb-card-accent-gold active-team-card">
+                <div class="nb-card-header">
+                  <span class="nb-tag nb-tag-gold">TEAM SILICONFABRIC</span>
+                  <span class="font-mono" style="font-size: 0.72rem; color: var(--dragon-gold);">Hardware</span>
+                </div>
+                <div class="nb-card-body" style="display: flex; flex-direction: column; flex-grow: 1;">
+                  <h4 class="font-pixel" style="font-size: 0.92rem; color: var(--text-old-white); margin-bottom: 0.35rem;">
+                    Micro-Fabrication & IoT Challenge
+                  </h4>
+                  <p class="font-mono" style="font-size: 0.78rem; color: var(--dragon-gold); margin-bottom: 0.85rem;">
+                    Status: <strong>Hardware Testing // Z-Axis Calibration</strong>
+                  </p>
+
+                  <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 0.75rem;">
+                    Refining motorized XYZ micropositioners and automated current threshold triggers for electro-chemical micro-patterning.
+                  </p>
+
+                  <div style="margin-bottom: 1rem;">
+                    <span class="font-mono" style="font-size: 0.72rem; color: var(--text-dim); display: block; margin-bottom: 0.35rem;">
+                      TEAM MEMBERS (LINK TO TEAM):
+                    </span>
+                    <div class="team-members-pills">
+                      <a href="#team-ruvaifa" class="team-member-pill">[👤] Mohammad Ruvaifa</a>
+                      <a href="#team-ramandeep" class="team-member-pill">[👤] Ramandeep</a>
+                      <a href="#team-aryan" class="team-member-pill">[👤] Aryan Sanjot</a>
+                    </div>
+                  </div>
+
+                  <div style="margin-top: auto; padding-top: 0.75rem; border-top: 1px solid var(--border-color);">
+                    <a href="https://github.com/Ruvaifa/electro-lithography-system" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-ghost nb-btn-sm" style="width: 100%;">
+                      [💻] Public Repo // ELS System
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           7. PROJECTS SECTION (#projects)
+           ==================================================================== -->
+      <section id="projects" class="section">
+        <div class="container">
+
+          <div class="section-header">
+            <div class="section-tag">// 0x05_SHOWCASE</div>
+            <h2 class="retro-title">Our <span data-scramble style="color: var(--dragon-gold);">Projects</span></h2>
+            <p class="retro-subtitle">Explore the innovative hardware, AI architectures, and software engineered by our members.</p>
+          </div>
+
+          <!-- Filter Tabs -->
+          <div class="projects-filter-container">
+            <button class="nb-filter-tab active" data-filter="all">[ALL PROJECTS]</button>
+            <button class="nb-filter-tab" data-filter="AI & ML">[AI & ML]</button>
+            <button class="nb-filter-tab" data-filter="Web Development">[WEB DEV]</button>
+            <button class="nb-filter-tab" data-filter="IoT & Hardware">[IOT & HARDWARE]</button>
+            <button class="nb-filter-tab" data-filter="Robotics">[ROBOTICS]</button>
+            <button class="nb-filter-tab" data-filter="3D Rendering">[3D RENDERING]</button>
+          </div>
+
+          <!-- Projects Grid -->
+          <div class="projects-grid">
+
+            <!-- 1. DreamLab -->
+            <div class="nb-card nb-card-accent-red project-card" data-category="AI & ML">
+              <div class="project-img-wrapper">
+                <span class="nb-tag nb-tag-red project-category-badge">AI & ML</span>
+                <img src="assets/anmol_projimage.webp" alt="DreamLab" class="project-img" loading="lazy" />
+              </div>
+              <div class="nb-card-body" style="display: flex; flex-direction: column; flex: 1;">
+                <div class="project-tech-tags">
+                  <span class="nb-tag nb-tag-dark">GenAI</span>
+                  <span class="nb-tag nb-tag-dark">PyTorch</span>
+                  <span class="nb-tag nb-tag-dark">Diffusion</span>
+                  <span class="nb-tag nb-tag-dark">CLIP</span>
+                </div>
+                <h3 class="project-title">DreamLab — Latent Diffusion Transformer</h3>
+                <p class="project-desc">
+                  Smaller-scale text-to-video generation model using Diffusion Transformer (DiT) architecture, autoencoders, and spatio-temporal attention.
+                </p>
+                <p class="project-lead">
+                  Lead: <a href="#team-anmol" style="color: var(--dragon-gold); text-decoration: underline;"><strong>Anmol Agarwal</strong></a>
+                </p>
+                <div class="project-actions">
+                  <a href="https://github.com/anm-ol/DreamLab" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-primary nb-btn-sm" style="flex: 1;">
+                    [💻] Code
+                  </a>
+                  <a href="https://anm-ol.github.io/projects.html" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-gold nb-btn-sm" style="flex: 1;">
+                    [📄] Docs
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Electro-Lithography System -->
+            <div class="nb-card nb-card-accent-gold project-card" data-category="IoT & Hardware">
+              <div class="project-img-wrapper">
+                <span class="nb-tag nb-tag-gold project-category-badge">IoT & Hardware</span>
+                <img src="assets/ELS_image.webp" alt="Electro-Lithography System" class="project-img" loading="lazy" />
+              </div>
+              <div class="nb-card-body" style="display: flex; flex-direction: column; flex: 1;">
+                <div class="project-tech-tags">
+                  <span class="nb-tag nb-tag-dark">Python</span>
+                  <span class="nb-tag nb-tag-dark">Motor Control</span>
+                  <span class="nb-tag nb-tag-dark">SMU</span>
+                  <span class="nb-tag nb-tag-dark">XYZ Stage</span>
+                </div>
+                <h3 class="project-title">Electro-Lithography System</h3>
+                <p class="project-desc">
+                  Micron-level precision probe system with real-time Z-axis feedback for micro and nano-scale surface patterning.
+                </p>
+                <p class="project-lead">
+                  Lead: <a href="#team-ruvaifa" style="color: var(--dragon-gold); text-decoration: underline;"><strong>Mohammad Ruvaifa</strong></a>
+                </p>
+                <div class="project-actions">
+                  <a href="https://github.com/Ruvaifa/electro-lithography-system" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-primary nb-btn-sm" style="flex: 1;">
+                    [💻] Code
+                  </a>
+                  <a href="https://github.com/Ruvaifa/electro-lithography-system/blob/main/README.md" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-gold nb-btn-sm" style="flex: 1;">
+                    [📄] Docs
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Sim3D -->
+            <div class="nb-card nb-card-accent-aqua project-card" data-category="3D Rendering">
+              <div class="project-img-wrapper">
+                <span class="nb-tag nb-tag-aqua project-category-badge">3D Rendering</span>
+                <img src="assets/sim3d.webp" alt="Sim3D Physics Engine" class="project-img" loading="lazy" />
+              </div>
+              <div class="nb-card-body" style="display: flex; flex-direction: column; flex: 1;">
+                <div class="project-tech-tags">
+                  <span class="nb-tag nb-tag-dark">C++</span>
+                  <span class="nb-tag nb-tag-dark">OpenGL</span>
+                  <span class="nb-tag nb-tag-dark">Mass-Spring</span>
+                  <span class="nb-tag nb-tag-dark">ImGui</span>
+                </div>
+                <h3 class="project-title">Sim3D — Realtime Cloth & Physics Engine</h3>
+                <p class="project-desc">
+                  3D physics engine featuring textured cloth simulation, Phong shading, batch rendering, and grid collision detection.
+                </p>
+                <p class="project-lead">
+                  Lead: <a href="#team-anmol" style="color: var(--dragon-gold); text-decoration: underline;"><strong>Anmol Agarwal</strong></a>
+                </p>
+                <div class="project-actions">
+                  <a href="https://github.com/anm-ol/sim3d" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-primary nb-btn-sm" style="flex: 1;">
+                    [💻] Code
+                  </a>
+                  <a href="https://anm-ol.github.io/sim3d.html" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-gold nb-btn-sm" style="flex: 1;">
+                    [📄] Docs
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. PGNTA Humanoid Robot -->
+            <div class="nb-card nb-card-accent-green project-card" data-category="Robotics">
+              <div class="project-img-wrapper">
+                <span class="nb-tag nb-tag-green project-category-badge">Robotics</span>
+                <img src="assets/PGNTA_image.webp" alt="PGNTA Humanoid Robot" class="project-img" loading="lazy" />
+              </div>
+              <div class="nb-card-body" style="display: flex; flex-direction: column; flex: 1;">
+                <div class="project-tech-tags">
+                  <span class="nb-tag nb-tag-dark">Robotics</span>
+                  <span class="nb-tag nb-tag-dark">ESP32</span>
+                  <span class="nb-tag nb-tag-dark">Controls</span>
+                  <span class="nb-tag nb-tag-dark">Servos</span>
+                </div>
+                <h3 class="project-title">PGNTA: 17 DOF Humanoid Robot</h3>
+                <p class="project-desc">
+                  17 Degree of Freedom humanoid robot powered by ESP32, servo matrices, and custom joint physics.
+                </p>
+                <p class="project-lead">
+                  Lead: <a href="#team-prashant" style="color: var(--dragon-gold); text-decoration: underline;"><strong>Prashant Gupta</strong></a>
+                </p>
+                <div class="project-actions">
+                  <a href="https://rebelpg.github.io/project/" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-gold nb-btn-sm" style="width: 100%;">
+                    [📄] Documentation
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. DRL Stock Framework -->
+            <div class="nb-card nb-card-accent-red project-card" data-category="AI & ML">
+              <div class="project-img-wrapper">
+                <span class="nb-tag nb-tag-red project-category-badge">AI & ML</span>
+                <img src="assets/DRL_stock_analyzer.webp" alt="DRL Stock Analyzer" class="project-img" loading="lazy" />
+              </div>
+              <div class="nb-card-body" style="display: flex; flex-direction: column; flex: 1;">
+                <div class="project-tech-tags">
+                  <span class="nb-tag nb-tag-dark">RL</span>
+                  <span class="nb-tag nb-tag-dark">Python</span>
+                  <span class="nb-tag nb-tag-dark">Finance</span>
+                  <span class="nb-tag nb-tag-dark">Streamlit</span>
+                </div>
+                <h3 class="project-title">DRL Stock Backtesting Framework</h3>
+                <p class="project-desc">
+                  Reinforcement learning agent executing automated algorithmic trading strategies under market volatility.
+                </p>
+                <p class="project-lead">
+                  Lead: <a href="#team-shafwan" style="color: var(--dragon-gold); text-decoration: underline;"><strong>Shafwan Safi</strong></a>
+                </p>
+                <div class="project-actions">
+                  <a href="https://github.com/Shafwansafi06/DRL_Stock_Analyzer" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-primary nb-btn-sm" style="width: 100%;">
+                    [💻] View Code
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6. ForkCast Kitchen AI -->
+            <div class="nb-card nb-card-accent-gold project-card" data-category="Web Development">
+              <div class="project-img-wrapper">
+                <span class="nb-tag nb-tag-gold project-category-badge">Web Development</span>
+                <img src="assets/Forkcast_image.webp" alt="ForkCast Kitchen AI" class="project-img" loading="lazy" />
+              </div>
+              <div class="nb-card-body" style="display: flex; flex-direction: column; flex: 1;">
+                <div class="project-tech-tags">
+                  <span class="nb-tag nb-tag-dark">Node.js</span>
+                  <span class="nb-tag nb-tag-dark">AI</span>
+                  <span class="nb-tag nb-tag-dark">TypeScript</span>
+                  <span class="nb-tag nb-tag-dark">Supabase</span>
+                </div>
+                <h3 class="project-title">ForkCast — The Kitchen AI</h3>
+                <p class="project-desc">
+                  Personalized meal planning, smart grocery management, and contextual recipe recommendations.
+                </p>
+                <p class="project-lead">
+                  Lead: <a href="#team-shafwan" style="color: var(--dragon-gold); text-decoration: underline;"><strong>Shafwan Safi</strong></a>
+                </p>
+                <div class="project-actions">
+                  <a href="https://github.com/Shafwansafi06/forkcast-kitchen-ai" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-primary nb-btn-sm" style="flex: 1;">
+                    [💻] Code
+                  </a>
+                  <a href="https://forkcast-meals.com" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-gold nb-btn-sm" style="flex: 1;">
+                    [⚡] Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           8. TEAM SECTION (#team)
            ==================================================================== -->
       <section id="team" class="section">
         <div class="container">
@@ -427,9 +1341,17 @@
           </div>
 
           <div class="section-header">
-            <div class="section-tag">// 0x02_CREW</div>
+            <div class="section-tag">// 0x06_CREW</div>
             <h2 class="retro-title">Meet Our <span data-scramble style="color: var(--dragon-gold);">Team</span></h2>
             <p class="retro-subtitle">The passionate individuals behind EECS Club who make everything possible.</p>
+          </div>
+
+          <!-- Active Tenure Indicator Banner -->
+          <div class="tenure-archive-strip">
+            <span class="nb-tag nb-tag-gold" style="font-size: 0.8rem; padding: 0.5rem 1rem;">
+              <span class="led-indicator led-green"></span>
+              CURRENT TENURE: 2024–2025 / 2025–2026 ACTIVE
+            </span>
           </div>
 
           <!-- Faculty Advisors -->
@@ -440,12 +1362,10 @@
           <div class="faculty-grid">
             
             <!-- Dr. Arijit Sen -->
-            <div class="dossier-card">
-              <div class="dossier-header-strip">
-                <span>// CLEARANCE: FACULTY_MENTOR</span>
-                <div class="dossier-barcode">
-                  <span style="width: 2px;"></span><span style="width: 4px;"></span><span style="width: 1px;"></span><span style="width: 3px;"></span>
-                </div>
+            <div id="team-arijit" id="team-arijit" class="nb-card dossier-card nb-card-accent-gold">
+              <div class="nb-card-header">
+                <span class="nb-tag nb-tag-gold">FACULTY ADVISOR</span>
+                <span class="font-mono" style="font-size: 0.75rem; color: var(--text-dim);">EECS Dept</span>
               </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
@@ -469,12 +1389,10 @@
             </div>
 
             <!-- Dr. Haroon Rashid Lone -->
-            <div class="dossier-card">
-              <div class="dossier-header-strip">
-                <span>// CLEARANCE: FACULTY_MENTOR</span>
-                <div class="dossier-barcode">
-                  <span style="width: 3px;"></span><span style="width: 1px;"></span><span style="width: 4px;"></span><span style="width: 2px;"></span>
-                </div>
+            <div id="team-haroon" id="team-haroon" class="nb-card dossier-card nb-card-accent-gold">
+              <div class="nb-card-header">
+                <span class="nb-tag nb-tag-gold">FACULTY ADVISOR</span>
+                <span class="font-mono" style="font-size: 0.75rem; color: var(--text-dim);">EECS Dept</span>
               </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
@@ -507,12 +1425,10 @@
           <div class="coordinators-grid">
 
             <!-- Vishvajeet Singh -->
-            <div class="dossier-card">
-              <div class="dossier-header-strip">
-                <span>// CLEARANCE: LEVEL_0 // FOUNDER</span>
-                <div class="dossier-barcode">
-                  <span style="width: 2px;"></span><span style="width: 3px;"></span><span style="width: 1px;"></span>
-                </div>
+            <div id="team-vishu" id="team-vishu" class="nb-card dossier-card nb-card-accent-red">
+              <div class="nb-card-header">
+                <span class="nb-tag nb-tag-red">FOUNDER</span>
+                <span class="font-mono" style="font-size: 0.75rem; color: var(--text-dim);">Graduate</span>
               </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
@@ -524,6 +1440,9 @@
                 <p class="member-bio">
                   "Engineering begins where theory meets action. We had plenty of theory but nowhere to actually build, break, and create. EECS Club is that space."
                 </p>
+                <div class="member-project-links">
+                  <span class="member-project-badge">[⭐ Founder & Hardware Mentor]</span>
+                </div>
                 <div class="member-socials">
                   <a href="https://www.linkedin.com/in/vishvajeet-singh-766866218/" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" aria-label="LinkedIn">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
@@ -533,12 +1452,10 @@
             </div>
 
             <!-- Pranay Meshram -->
-            <div class="dossier-card">
-              <div class="dossier-header-strip">
-                <span>// CLEARANCE: LEVEL_1 // LEAD</span>
-                <div class="dossier-barcode">
-                  <span style="width: 1px;"></span><span style="width: 4px;"></span><span style="width: 2px;"></span>
-                </div>
+            <div id="team-pranay" id="team-pranay" class="nb-card dossier-card nb-card-accent-red">
+              <div class="nb-card-header">
+                <span class="nb-tag nb-tag-red">COORDINATOR</span>
+                <span class="font-mono" style="font-size: 0.75rem; color: var(--text-dim);">3rd Year</span>
               </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
@@ -550,6 +1467,9 @@
                 <p class="member-bio">
                   Lead of the EECS Club. Loves organizing and mentoring. git pushin’ my love for tech.
                 </p>
+                <div class="member-project-links">
+                  <span class="member-project-badge">[🚀 Club Operations & Mentorship]</span>
+                </div>
                 <div class="member-socials">
                   <a href="https://github.com/praymesh/" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" aria-label="GitHub">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
@@ -565,12 +1485,10 @@
             </div>
 
             <!-- Mohammad Ruvaifa -->
-            <div class="dossier-card">
-              <div class="dossier-header-strip">
-                <span>// CLEARANCE: LEVEL_1 // LEAD</span>
-                <div class="dossier-barcode">
-                  <span style="width: 2px;"></span><span style="width: 2px;"></span><span style="width: 4px;"></span>
-                </div>
+            <div id="team-ruvaifa" id="team-ruvaifa" class="nb-card dossier-card nb-card-accent-red">
+              <div class="nb-card-header">
+                <span class="nb-tag nb-tag-red">COORDINATOR</span>
+                <span class="font-mono" style="font-size: 0.75rem; color: var(--text-dim);">2nd Year</span>
               </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
@@ -580,8 +1498,12 @@
                 <p class="member-role">Coordinator</p>
                 <p class="member-dept-year">Engineering Science • 2nd Year</p>
                 <p class="member-bio">
-                  Compiler crashes, me too. Building impactful projects with practical utility. F1 enthusiast (fastest car wins).
+                  Compiler crashes, me too. Just a techie guy trying to make things work, emotionally if not electrically. I like building practical projects and I love F1.
                 </p>
+                <div class="member-project-links">
+                  <a href="#projects" class="member-project-badge">[📂 ELS Project]</a>
+                  <a href="#hackathons" class="member-project-badge">[⚡ Team SiliconFabric]</a>
+                </div>
                 <div class="member-socials">
                   <a href="https://github.com/Ruvaifa" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" aria-label="GitHub">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
@@ -598,18 +1520,15 @@
 
           </div>
 
-          <!-- Core Committee Members (16 Members) -->
+          <!-- Core Committee Members -->
           <h3 class="team-subsection-title">
-            <span>[⚡] CORE COMMITTEE MEMBERS</span>
+            <span>[👥] CORE COMMITTEE MEMBERS</span>
           </h3>
 
           <div class="core-team-grid">
 
             <!-- 1. Agolika -->
-            <div class="dossier-card">
-              <div class="dossier-header-strip">
-                <span>// ID: 0x01 // CORE</span>
-              </div>
+            <div id="team-agolika" class="nb-card dossier-card nb-card-accent-gold">
               <div class="nb-card-body">
                 <div class="member-avatar-container">
                   <img src="assets/Agolika_image.webp" alt="Agolika" class="member-avatar" loading="lazy" />
@@ -617,7 +1536,12 @@
                 <h4 class="member-name">Agolika</h4>
                 <p class="member-role">Core Committee</p>
                 <p class="member-dept-year">ECE • 3rd Year</p>
-                <p class="member-bio">ECE by degree, chaos and foodie. Building stuff and fixing things.</p>
+                <p class="member-bio">
+                  ECE by degree, chaos and foodie. I like building stuff, fixing things, and occasionally pretending I know nothing about what’s going on.
+                </p>
+                <div class="member-project-links">
+                  <span class="member-project-badge">[🛠️ ECE & Hardware Ops]</span>
+                </div>
                 <div class="member-socials">
                   <a href="mailto:agolika23@iiserb.ac.in" class="nb-icon-btn" aria-label="Email">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
@@ -627,10 +1551,7 @@
             </div>
 
             <!-- 2. Divyam Sood -->
-            <div class="dossier-card">
-              <div class="dossier-header-strip">
-                <span>// ID: 0x02 // CORE</span>
-              </div>
+            <div id="team-divyam" class="nb-card dossier-card nb-card-accent-red">
               <div class="nb-card-body">
                 <div class="member-avatar-container">
                   <img src="assets/Divyam_image.webp" alt="Divyam Sood" class="member-avatar" loading="lazy" />
@@ -638,7 +1559,12 @@
                 <h4 class="member-name">Divyam Sood</h4>
                 <p class="member-role">Core Committee</p>
                 <p class="member-dept-year">EECS • 3rd Year</p>
-                <p class="member-bio">Tinkering with stuff, grand plans, reading, and anime in free time.</p>
+                <p class="member-bio">
+                  Likes tinkering with stuff, making grand plans, reading, and watching anime in free time. Believes all time is free if responsibilities are ignored.
+                </p>
+                <div class="member-project-links">
+                  <span class="member-project-badge">[⚡ Electronics & Strategy]</span>
+                </div>
                 <div class="member-socials">
                   <a href="https://www.linkedin.com/in/divyam-sood/" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" aria-label="LinkedIn">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
@@ -651,10 +1577,7 @@
             </div>
 
             <!-- 3. Anmol Agarwal -->
-            <div class="dossier-card">
-              <div class="dossier-header-strip">
-                <span>// ID: 0x03 // CORE</span>
-              </div>
+            <div id="team-anmol" class="nb-card dossier-card nb-card-accent-green">
               <div class="nb-card-body">
                 <div class="member-avatar-container">
                   <img src="assets/Anmol_image.webp" alt="Anmol Agarwal" class="member-avatar" loading="lazy" />
@@ -662,7 +1585,14 @@
                 <h4 class="member-name">Anmol Agarwal</h4>
                 <p class="member-role">Core Committee</p>
                 <p class="member-dept-year">EECS • 3rd Year</p>
-                <p class="member-bio">neural nets make my brain go brr.</p>
+                <p class="member-bio">
+                  Neural nets make my brain go brr. Deep learning practitioner, computer graphics builder, and diffusion transformer researcher.
+                </p>
+                <div class="member-project-links">
+                  <a href="#projects" class="member-project-badge">[📂 DreamLab]</a>
+                  <a href="#projects" class="member-project-badge">[📂 Sim3D]</a>
+                  <a href="#hackathons" class="member-project-badge">[⚡ QuantFlux]</a>
+                </div>
                 <div class="member-socials">
                   <a href="https://github.com/anm-ol" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" aria-label="GitHub">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
@@ -678,10 +1608,7 @@
             </div>
 
             <!-- 4. Prashant Gupta -->
-            <div class="dossier-card">
-              <div class="dossier-header-strip">
-                <span>// ID: 0x04 // CORE</span>
-              </div>
+            <div id="team-prashant" class="nb-card dossier-card nb-card-accent-aqua">
               <div class="nb-card-body">
                 <div class="member-avatar-container">
                   <img src="assets/prashant_image.webp" alt="Prashant Gupta" class="member-avatar" loading="lazy" />
@@ -689,7 +1616,13 @@
                 <h4 class="member-name">Prashant Gupta</h4>
                 <p class="member-role">Core Committee</p>
                 <p class="member-dept-year">EECS • 3rd Year</p>
-                <p class="member-bio">I make robots move so I don’t have to.</p>
+                <p class="member-bio">
+                  I make robots move so I don’t have to. Passionate about controls, robotics mechanics, embedded firmware, and bipedal humanoid walking.
+                </p>
+                <div class="member-project-links">
+                  <a href="#projects" class="member-project-badge">[📂 PGNTA Robot]</a>
+                  <a href="#hackathons" class="member-project-badge">[⚡ Team Autonomous]</a>
+                </div>
                 <div class="member-socials">
                   <a href="https://github.com/rebelpg" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" aria-label="GitHub">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
@@ -705,10 +1638,7 @@
             </div>
 
             <!-- 5. Shubham Mohanty -->
-            <div class="dossier-card">
-              <div class="dossier-header-strip">
-                <span>// ID: 0x05 // CORE</span>
-              </div>
+            <div id="team-mohanty" class="nb-card dossier-card nb-card-accent-gold">
               <div class="nb-card-body">
                 <div class="member-avatar-container">
                   <img src="assets/shubammonty_image.webp" alt="Shubham Mohanty" class="member-avatar" loading="lazy" />
@@ -716,7 +1646,12 @@
                 <h4 class="member-name">Shubham Mohanty</h4>
                 <p class="member-role">Core Committee</p>
                 <p class="member-dept-year">EECS • 3rd Year</p>
-                <p class="member-bio">Jack of some trades, master of none.</p>
+                <p class="member-bio">
+                  Jack of some trades, master of none. Enthusiastic about full stack engineering, electronics, and technical operations.
+                </p>
+                <div class="member-project-links">
+                  <span class="member-project-badge">[💻 Full-Stack & Systems]</span>
+                </div>
                 <div class="member-socials">
                   <a href="https://github.com/shubhammohanty" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" aria-label="GitHub">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
@@ -732,10 +1667,7 @@
             </div>
 
             <!-- 6. Ramandeep -->
-            <div class="dossier-card">
-              <div class="dossier-header-strip">
-                <span>// ID: 0x06 // CORE</span>
-              </div>
+            <div id="team-ramandeep" class="nb-card dossier-card nb-card-accent-red">
               <div class="nb-card-body">
                 <div class="member-avatar-container">
                   <img src="assets/ramandeep.webp" alt="Ramandeep" class="member-avatar" loading="lazy" />
@@ -743,7 +1675,12 @@
                 <h4 class="member-name">Ramandeep</h4>
                 <p class="member-role">Core Committee</p>
                 <p class="member-dept-year">EECS • 3rd Year</p>
-                <p class="member-bio">Photography, game dev, 3D modelling and electronics hardware.</p>
+                <p class="member-bio">
+                  Ever amazed with how electronics control our world. Passions include photography, game dev, 3D modelling, and making things in general.
+                </p>
+                <div class="member-project-links">
+                  <a href="#hackathons" class="member-project-badge">[⚡ Team SiliconFabric]</a>
+                </div>
                 <div class="member-socials">
                   <a href="https://github.com/ramanola" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" aria-label="GitHub">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
@@ -759,10 +1696,7 @@
             </div>
 
             <!-- 7. Gourangi Verma -->
-            <div class="dossier-card">
-              <div class="dossier-header-strip">
-                <span>// ID: 0x07 // CORE</span>
-              </div>
+            <div id="team-gourangi" class="nb-card dossier-card nb-card-accent-green">
               <div class="nb-card-body">
                 <div class="member-avatar-container">
                   <img src="assets/gourangi_image.webp" alt="Gourangi Verma" class="member-avatar" loading="lazy" />
@@ -770,7 +1704,12 @@
                 <h4 class="member-name">Gourangi Verma</h4>
                 <p class="member-role">Core Committee</p>
                 <p class="member-dept-year">Engineering Science • 2nd Year</p>
-                <p class="member-bio">Math, CS, solving intricate algorithmic problems, and anime enthusiast.</p>
+                <p class="member-bio">
+                  I like math and computer science, and solving problems which require a bit of both. When not struggling with a problem, watching anime or playing videogames.
+                </p>
+                <div class="member-project-links">
+                  <a href="#hackathons" class="member-project-badge">[⚡ Team QuantFlux]</a>
+                </div>
                 <div class="member-socials">
                   <a href="https://github.com/gourangiverma" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" aria-label="GitHub">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
@@ -786,10 +1725,7 @@
             </div>
 
             <!-- 8. Dharani Thota -->
-            <div class="dossier-card">
-              <div class="dossier-header-strip">
-                <span>// ID: 0x08 // CORE</span>
-              </div>
+            <div id="team-dharani" class="nb-card dossier-card nb-card-accent-aqua">
               <div class="nb-card-body">
                 <div class="member-avatar-container">
                   <img src="assets/Dharani_image.webp" alt="Dharani Thota" class="member-avatar" loading="lazy" />
@@ -797,7 +1733,12 @@
                 <h4 class="member-name">Dharani Thota</h4>
                 <p class="member-role">Core Committee</p>
                 <p class="member-dept-year">Engineering Science • 2nd Year</p>
-                <p class="member-bio">Tech enthusiast, space freak, never back down from a challenge.</p>
+                <p class="member-bio">
+                  I'm a tech enthusiast and space freak. Exploring the world is my jam. I never back down from a challenge. Avid anime watcher.
+                </p>
+                <div class="member-project-links">
+                  <span class="member-project-badge">[🚀 Space Tech & IoT]</span>
+                </div>
                 <div class="member-socials">
                   <a href="https://github.com/idharanithota" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" aria-label="GitHub">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
@@ -813,10 +1754,7 @@
             </div>
 
             <!-- 9. Shubham -->
-            <div class="dossier-card">
-              <div class="dossier-header-strip">
-                <span>// ID: 0x09 // CORE</span>
-              </div>
+            <div id="team-shubham" class="nb-card dossier-card nb-card-accent-gold">
               <div class="nb-card-body">
                 <div class="member-avatar-container">
                   <img src="assets/Shubham_image.webp" alt="Shubham" class="member-avatar" loading="lazy" />
@@ -824,7 +1762,12 @@
                 <h4 class="member-name">Shubham</h4>
                 <p class="member-role">Core Committee</p>
                 <p class="member-dept-year">Natural Sciences • 2nd Year</p>
-                <p class="member-bio">Building RC cars and battle-ready robots with Arduino.</p>
+                <p class="member-bio">
+                  Robotics enthusiast who loves building RC cars with Arduino—next up, a battle-ready robot car. When not wiring circuits, capturing moments through camera.
+                </p>
+                <div class="member-project-links">
+                  <a href="#hackathons" class="member-project-badge">[⚡ Team Autonomous]</a>
+                </div>
                 <div class="member-socials">
                   <a href="https://www.linkedin.com/in/shubham-b8b3422b5" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" aria-label="LinkedIn">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
@@ -837,10 +1780,7 @@
             </div>
 
             <!-- 10. Aryan Sanjot -->
-            <div class="dossier-card">
-              <div class="dossier-header-strip">
-                <span>// ID: 0x10 // CORE</span>
-              </div>
+            <div id="team-aryan" class="nb-card dossier-card nb-card-accent-red">
               <div class="nb-card-body">
                 <div class="member-avatar-container">
                   <img src="assets/aryan_sanjot.webp" alt="Aryan Sanjot" class="member-avatar" loading="lazy" />
@@ -848,7 +1788,12 @@
                 <h4 class="member-name">Aryan Sanjot</h4>
                 <p class="member-role">Core Committee</p>
                 <p class="member-dept-year">Engineering Science • 2nd Year</p>
-                <p class="member-bio">Curious mind in technology and physics, mixing code and creativity.</p>
+                <p class="member-bio">
+                  Curious mind in the domain of technology and physics. I love to mix tech and creativity and always up for learning and prototyping.
+                </p>
+                <div class="member-project-links">
+                  <a href="#hackathons" class="member-project-badge">[⚡ Team SiliconFabric]</a>
+                </div>
                 <div class="member-socials">
                   <a href="https://github.com/iaryan4" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" aria-label="GitHub">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
@@ -864,10 +1809,7 @@
             </div>
 
             <!-- 11. Prajyot Nula -->
-            <div class="dossier-card">
-              <div class="dossier-header-strip">
-                <span>// ID: 0x11 // CORE</span>
-              </div>
+            <div id="team-prajyot" class="nb-card dossier-card nb-card-accent-green">
               <div class="nb-card-body">
                 <div class="member-avatar-container">
                   <img src="assets/Prajyot_image.webp" alt="Prajyot Nula" class="member-avatar" loading="lazy" />
@@ -875,7 +1817,12 @@
                 <h4 class="member-name">Prajyot Nula</h4>
                 <p class="member-role">Core Committee</p>
                 <p class="member-dept-year">Engineering Science • 2nd Year</p>
-                <p class="member-bio">Robotics enthusiast, machine learning and computer vision developer.</p>
+                <p class="member-bio">
+                  Robotics enthusiast who also enjoys machine learning, sensor integration, and computer vision pipelines.
+                </p>
+                <div class="member-project-links">
+                  <a href="#hackathons" class="member-project-badge">[⚡ Team Autonomous]</a>
+                </div>
                 <div class="member-socials">
                   <a href="https://github.com/thymeprn" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" aria-label="GitHub">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
@@ -891,10 +1838,7 @@
             </div>
 
             <!-- 12. Nikhil Vashisht -->
-            <div class="dossier-card">
-              <div class="dossier-header-strip">
-                <span>// ID: 0x12 // CORE</span>
-              </div>
+            <div id="team-nikhil" class="nb-card dossier-card nb-card-accent-aqua">
               <div class="nb-card-body">
                 <div class="member-avatar-container">
                   <img src="assets/Nikhil_image.webp" alt="Nikhil Vashisht" class="member-avatar" loading="lazy" />
@@ -902,7 +1846,12 @@
                 <h4 class="member-name">Nikhil Vashisht</h4>
                 <p class="member-role">Core Committee</p>
                 <p class="member-dept-year">Engineering Science • 2nd Year</p>
-                <p class="member-bio">Connecting physics and mathematical elegance to practical AI & CS.</p>
+                <p class="member-bio">
+                  Fascinated by the big picture – from the fundamental laws of physics to the elegant logic of mathematics and AI.
+                </p>
+                <div class="member-project-links">
+                  <span class="member-project-badge">[🔬 Physics & AI Logic]</span>
+                </div>
                 <div class="member-socials">
                   <a href="https://github.com/nikhilcodes777" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" aria-label="GitHub">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
@@ -918,10 +1867,7 @@
             </div>
 
             <!-- 13. Yashmeet -->
-            <div class="dossier-card">
-              <div class="dossier-header-strip">
-                <span>// ID: 0x13 // CORE</span>
-              </div>
+            <div id="team-yashmeet" class="nb-card dossier-card nb-card-accent-gold">
               <div class="nb-card-body">
                 <div class="member-avatar-container">
                   <img src="assets/Yashmeet_image.webp" alt="Yashmeet" class="member-avatar" loading="lazy" />
@@ -929,7 +1875,12 @@
                 <h4 class="member-name">Yashmeet</h4>
                 <p class="member-role">Core Committee</p>
                 <p class="member-dept-year">Engineering Science • 2nd Year</p>
-                <p class="member-bio">Digital & hardware audio systems, signal shaping textures, and gaming.</p>
+                <p class="member-bio">
+                  I’m into tech that messes with audio—digital and hardware. I love how twisting electrical signals shapes sound, and also, I like gaming too.
+                </p>
+                <div class="member-project-links">
+                  <span class="member-project-badge">[🎛️ Audio Hardware & DSP]</span>
+                </div>
                 <div class="member-socials">
                   <a href="mailto:yashmeet24@iiserb.ac.in" class="nb-icon-btn" aria-label="Email">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
@@ -939,18 +1890,22 @@
             </div>
 
             <!-- 14. Shafwan Safi -->
-            <div class="dossier-card">
-              <div class="dossier-header-strip">
-                <span>// ID: 0x14 // DEV</span>
-              </div>
+            <div id="team-shafwan" class="nb-card dossier-card nb-card-accent-red">
               <div class="nb-card-body">
                 <div class="member-avatar-container">
                   <img src="assets/Shafwan_image.webp" alt="Shafwan Safi" class="member-avatar" loading="lazy" />
                 </div>
                 <h4 class="member-name">Shafwan Safi</h4>
-                <p class="member-role">Core Committee / Dev</p>
+                <p class="member-role">Core Committee / Developer</p>
                 <p class="member-dept-year">Engineering Science • 2nd Year</p>
-                <p class="member-bio">AI, web dev, and trading bots — basically, if it runs on code, I’ll break and fix it.</p>
+                <p class="member-bio">
+                  AI, web dev, and trading bots — basically, if it runs on code, I’ll break it and then fix it. Developer of the EECS Club portal.
+                </p>
+                <div class="member-project-links">
+                  <a href="#projects" class="member-project-badge">[📂 DRL Stock]</a>
+                  <a href="#projects" class="member-project-badge">[📂 ForkCast]</a>
+                  <a href="#hackathons" class="member-project-badge">[⚡ QuantFlux]</a>
+                </div>
                 <div class="member-socials">
                   <a href="https://github.com/Shafwansafi06" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" aria-label="GitHub">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
@@ -966,10 +1921,7 @@
             </div>
 
             <!-- 15. Vansh Mangal -->
-            <div class="dossier-card">
-              <div class="dossier-header-strip">
-                <span>// ID: 0x15 // CORE</span>
-              </div>
+            <div id="team-vansh" class="nb-card dossier-card nb-card-accent-green">
               <div class="nb-card-body">
                 <div class="member-avatar-container">
                   <img src="assets/mangal.webp" alt="Vansh Mangal" class="member-avatar" loading="lazy" />
@@ -977,7 +1929,12 @@
                 <h4 class="member-name">Vansh Mangal</h4>
                 <p class="member-role">Core Committee</p>
                 <p class="member-dept-year">Natural Sciences • 2nd Year</p>
-                <p class="member-bio">Curious about science, drawn to tech, thriving in bold experiments.</p>
+                <p class="member-bio">
+                  Curious about science, drawn to tech, thriving in the chaos of overthinking and bold experiments. Here to make the EECS Club stand out.
+                </p>
+                <div class="member-project-links">
+                  <span class="member-project-badge">[📸 Media & Experiments]</span>
+                </div>
                 <div class="member-socials">
                   <a href="https://www.linkedin.com/in/vanshmangal/" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" aria-label="LinkedIn">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
@@ -990,10 +1947,7 @@
             </div>
 
             <!-- 16. Ishaan Jena -->
-            <div class="dossier-card">
-              <div class="dossier-header-strip">
-                <span>// ID: 0x16 // CORE</span>
-              </div>
+            <div id="team-ishaan" class="nb-card dossier-card nb-card-accent-aqua">
               <div class="nb-card-body">
                 <div class="member-avatar-container">
                   <img src="assets/ishaan_image.webp" alt="Ishaan Jena" class="member-avatar" loading="lazy" />
@@ -1001,7 +1955,12 @@
                 <h4 class="member-name">Ishaan Jena</h4>
                 <p class="member-role">Core Committee</p>
                 <p class="member-dept-year">Engineering Sciences • 2nd Year</p>
-                <p class="member-bio">Exploring signals & waves, circuits, radio antennas, and telescopes.</p>
+                <p class="member-bio">
+                  Exploring electronics, especially in signals and waves. Likes working on circuits, building models. Enthusiastic about radio antennas and telescopes.
+                </p>
+                <div class="member-project-links">
+                  <span class="member-project-badge">[📡 RF Signals & Antennas]</span>
+                </div>
                 <div class="member-socials">
                   <a href="mailto:ishaanj24@iiserb.ac.in" class="nb-icon-btn" aria-label="Email">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
@@ -1016,234 +1975,7 @@
       </section>
 
       <!-- ====================================================================
-           CHAPTER 03: HARDWARE & AI SCHEMATICS (#projects)
-           ==================================================================== -->
-      <section id="projects" class="section">
-        <div class="container">
-
-          <div class="terminal-window" style="margin-bottom: 2.5rem;">
-            <div class="terminal-titlebar">
-              <span>[■] HARDWARE_SCHEMATICS.CAD // CHAPTER_03</span>
-              <div class="terminal-controls">
-                <span>—</span>
-                <span>□</span>
-                <span>✕</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="section-header">
-            <div class="section-tag">// 0x03_SHOWCASE</div>
-            <h2 class="retro-title">Our <span data-scramble style="color: var(--dragon-gold);">Projects</span></h2>
-            <p class="retro-subtitle">Explore the innovative projects developed by our club members.</p>
-          </div>
-
-          <!-- Filter Tabs -->
-          <div class="projects-filter-container">
-            <button class="nb-filter-tab active" data-filter="all">[ALL PROJECTS]</button>
-            <button class="nb-filter-tab" data-filter="AI & ML">[AI & ML]</button>
-            <button class="nb-filter-tab" data-filter="Web Development">[WEB DEV]</button>
-            <button class="nb-filter-tab" data-filter="IoT & Hardware">[IOT & HARDWARE]</button>
-            <button class="nb-filter-tab" data-filter="Robotics">[ROBOTICS]</button>
-            <button class="nb-filter-tab" data-filter="3D Rendering">[3D RENDERING]</button>
-          </div>
-
-          <!-- Projects Grid -->
-          <div class="projects-grid">
-
-            <!-- 1. DreamLab -->
-            <div class="project-cartridge nb-card-accent-red project-card" data-category="AI & ML">
-              <div class="cartridge-notch"></div>
-              <div class="project-img-wrapper">
-                <span class="nb-tag nb-tag-red project-category-badge">AI & ML</span>
-                <img src="assets/anmol_projimage.webp" alt="DreamLab" class="project-img" loading="lazy" />
-              </div>
-              <div class="nb-card-body" style="display: flex; flex-direction: column; flex: 1;">
-                <div class="project-tech-tags">
-                  <span class="nb-tag nb-tag-dark">GenAI</span>
-                  <span class="nb-tag nb-tag-dark">PyTorch</span>
-                  <span class="nb-tag nb-tag-dark">Diffusion</span>
-                  <span class="nb-tag nb-tag-dark">CLIP</span>
-                </div>
-                <h3 class="project-title">DreamLab — Latent Diffusion Transformer</h3>
-                <p class="project-desc">
-                  Smaller-scale text-to-video generation model using Diffusion Transformer (DiT) architecture, autoencoders, and spatio-temporal attention.
-                </p>
-                <p class="project-lead">
-                  Lead: <strong>Anmol Agarwal</strong>
-                </p>
-                <div class="project-actions">
-                  <a href="https://github.com/anm-ol/DreamLab" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-primary nb-btn-sm" style="flex: 1;">
-                    [💻] Code
-                  </a>
-                  <a href="https://anm-ol.github.io/projects.html" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-gold nb-btn-sm" style="flex: 1;">
-                    [📄] Docs
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- 2. Electro-Lithography System -->
-            <div class="project-cartridge nb-card-accent-gold project-card" data-category="IoT & Hardware">
-              <div class="cartridge-notch"></div>
-              <div class="project-img-wrapper">
-                <span class="nb-tag nb-tag-gold project-category-badge">IoT & Hardware</span>
-                <img src="assets/ELS_image.webp" alt="Electro-Lithography System" class="project-img" loading="lazy" />
-              </div>
-              <div class="nb-card-body" style="display: flex; flex-direction: column; flex: 1;">
-                <div class="project-tech-tags">
-                  <span class="nb-tag nb-tag-dark">Python</span>
-                  <span class="nb-tag nb-tag-dark">Motor Control</span>
-                  <span class="nb-tag nb-tag-dark">SMU</span>
-                  <span class="nb-tag nb-tag-dark">XYZ Stage</span>
-                </div>
-                <h3 class="project-title">Electro-Lithography System</h3>
-                <p class="project-desc">
-                  Micron-level precision probe system with real-time Z-axis feedback for micro and nano-scale surface patterning.
-                </p>
-                <p class="project-lead">
-                  Lead: <strong>Mohammad Ruvaifa</strong>
-                </p>
-                <div class="project-actions">
-                  <a href="https://github.com/Ruvaifa/electro-lithography-system" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-primary nb-btn-sm" style="flex: 1;">
-                    [💻] Code
-                  </a>
-                  <a href="https://github.com/Ruvaifa/electro-lithography-system/blob/main/README.md" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-gold nb-btn-sm" style="flex: 1;">
-                    [📄] Docs
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- 3. Sim3D -->
-            <div class="project-cartridge nb-card-accent-aqua project-card" data-category="3D Rendering">
-              <div class="cartridge-notch"></div>
-              <div class="project-img-wrapper">
-                <span class="nb-tag nb-tag-aqua project-category-badge">3D Rendering</span>
-                <img src="assets/sim3d.webp" alt="Sim3D Physics Engine" class="project-img" loading="lazy" />
-              </div>
-              <div class="nb-card-body" style="display: flex; flex-direction: column; flex: 1;">
-                <div class="project-tech-tags">
-                  <span class="nb-tag nb-tag-dark">C++</span>
-                  <span class="nb-tag nb-tag-dark">OpenGL</span>
-                  <span class="nb-tag nb-tag-dark">Mass-Spring</span>
-                  <span class="nb-tag nb-tag-dark">ImGui</span>
-                </div>
-                <h3 class="project-title">Sim3D — Realtime Cloth & Physics Engine</h3>
-                <p class="project-desc">
-                  3D physics engine featuring textured cloth simulation, Phong shading, batch rendering, and grid collision detection.
-                </p>
-                <p class="project-lead">
-                  Lead: <strong>Anmol Agarwal</strong>
-                </p>
-                <div class="project-actions">
-                  <a href="https://github.com/anm-ol/sim3d" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-primary nb-btn-sm" style="flex: 1;">
-                    [💻] Code
-                  </a>
-                  <a href="https://anm-ol.github.io/sim3d.html" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-gold nb-btn-sm" style="flex: 1;">
-                    [📄] Docs
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- 4. PGNTA Humanoid Robot -->
-            <div class="project-cartridge nb-card-accent-green project-card" data-category="Robotics">
-              <div class="cartridge-notch"></div>
-              <div class="project-img-wrapper">
-                <span class="nb-tag nb-tag-green project-category-badge">Robotics</span>
-                <img src="assets/PGNTA_image.webp" alt="PGNTA Humanoid Robot" class="project-img" loading="lazy" />
-              </div>
-              <div class="nb-card-body" style="display: flex; flex-direction: column; flex: 1;">
-                <div class="project-tech-tags">
-                  <span class="nb-tag nb-tag-dark">Robotics</span>
-                  <span class="nb-tag nb-tag-dark">ESP32</span>
-                  <span class="nb-tag nb-tag-dark">Controls</span>
-                  <span class="nb-tag nb-tag-dark">Servos</span>
-                </div>
-                <h3 class="project-title">PGNTA: 17 DOF Humanoid Robot</h3>
-                <p class="project-desc">
-                  17 Degree of Freedom humanoid robot powered by ESP32, servo matrices, and custom joint physics.
-                </p>
-                <p class="project-lead">
-                  Lead: <strong>Prashant Gupta</strong>
-                </p>
-                <div class="project-actions">
-                  <a href="https://rebelpg.github.io/project/" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-gold nb-btn-sm" style="width: 100%;">
-                    [📄] Documentation
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- 5. DRL Stock Framework -->
-            <div class="project-cartridge nb-card-accent-red project-card" data-category="AI & ML">
-              <div class="cartridge-notch"></div>
-              <div class="project-img-wrapper">
-                <span class="nb-tag nb-tag-red project-category-badge">AI & ML</span>
-                <img src="assets/DRL_stock_analyzer.webp" alt="DRL Stock Analyzer" class="project-img" loading="lazy" />
-              </div>
-              <div class="nb-card-body" style="display: flex; flex-direction: column; flex: 1;">
-                <div class="project-tech-tags">
-                  <span class="nb-tag nb-tag-dark">RL</span>
-                  <span class="nb-tag nb-tag-dark">Python</span>
-                  <span class="nb-tag nb-tag-dark">Finance</span>
-                  <span class="nb-tag nb-tag-dark">Streamlit</span>
-                </div>
-                <h3 class="project-title">DRL Stock Backtesting Framework</h3>
-                <p class="project-desc">
-                  Reinforcement learning agent executing automated algorithmic trading strategies under market volatility.
-                </p>
-                <p class="project-lead">
-                  Lead: <strong>Shafwan Safi</strong>
-                </p>
-                <div class="project-actions">
-                  <a href="https://github.com/Shafwansafi06/DRL_Stock_Analyzer" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-primary nb-btn-sm" style="width: 100%;">
-                    [💻] View Code
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- 6. ForkCast Kitchen AI -->
-            <div class="project-cartridge nb-card-accent-gold project-card" data-category="Web Development">
-              <div class="cartridge-notch"></div>
-              <div class="project-img-wrapper">
-                <span class="nb-tag nb-tag-gold project-category-badge">Web Development</span>
-                <img src="assets/Forkcast_image.webp" alt="ForkCast Kitchen AI" class="project-img" loading="lazy" />
-              </div>
-              <div class="nb-card-body" style="display: flex; flex-direction: column; flex: 1;">
-                <div class="project-tech-tags">
-                  <span class="nb-tag nb-tag-dark">Node.js</span>
-                  <span class="nb-tag nb-tag-dark">AI</span>
-                  <span class="nb-tag nb-tag-dark">TypeScript</span>
-                  <span class="nb-tag nb-tag-dark">Supabase</span>
-                </div>
-                <h3 class="project-title">ForkCast — The Kitchen AI</h3>
-                <p class="project-desc">
-                  Personalized meal planning, smart grocery management, and contextual recipe recommendations.
-                </p>
-                <p class="project-lead">
-                  Lead: <strong>Shafwan Safi</strong>
-                </p>
-                <div class="project-actions">
-                  <a href="https://github.com/Shafwansafi06/forkcast-kitchen-ai" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-primary nb-btn-sm" style="flex: 1;">
-                    [💻] Code
-                  </a>
-                  <a href="https://forkcast-meals.com" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-gold nb-btn-sm" style="flex: 1;">
-                    [⚡] Demo
-                  </a>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      <!-- ====================================================================
-           CHAPTER 04: SURVEILLANCE ARCHIVE & GALLERY (#gallery)
+           9. GALLERY & MOMENTS SECTION (#gallery)
            ==================================================================== -->
       <section id="gallery" class="section">
         <div class="container">
@@ -1260,15 +1992,15 @@
           </div>
 
           <div class="section-header">
-            <div class="section-tag">// 0x04_ARCHIVE</div>
-            <h2 class="retro-title">Gallery & <span data-scramble style="color: var(--dragon-gold);">Moments</span></h2>
+            <div class="section-tag">// 0x07_ARCHIVE</div>
+            <h2 class="retro-title">Visual <span data-scramble style="color: var(--dragon-gold);">Gallery</span></h2>
             <p class="retro-subtitle">A glimpse into our workshops, projects, and community moments.</p>
           </div>
 
           <!-- Album 1: OG Team -->
           <div class="gallery-album">
             <h3 class="gallery-album-header">
-              <span class="led-indicator led-gold"></span> [01] OG Team
+              <span>[★] OG Team & Milestones</span>
             </h3>
             <div class="gallery-grid">
               <div class="gallery-item" data-caption="Foundation team gathering and milestone celebration">
@@ -1286,9 +2018,9 @@
           <!-- Album 2: IISERB GOT LATENT -->
           <div class="gallery-album">
             <h3 class="gallery-album-header">
-              <span class="led-indicator led-red"></span> [02] IISERB GOT LATENT
+              <span>[★] IISERB GOT LATENT</span>
             </h3>
-            <div class="gallery-grid">
+            <div class="gallery-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
               <div class="gallery-item" data-caption="Main stage & scoreboard for IISERB Got Latent">
                 <img src="assets/latent_Board.webp" alt="Latent Stage & Scoreboard" class="gallery-img" loading="lazy" />
               </div>
@@ -1307,7 +2039,7 @@
           <!-- Album 3: Spark Tank -->
           <div class="gallery-album">
             <h3 class="gallery-album-header">
-              <span class="led-indicator led-green"></span> [03] Spark Tank
+              <span>[★] Spark Tank Hardware Expo</span>
             </h3>
             <div class="gallery-grid">
               <div class="gallery-item" data-caption="Spark Tank pitching and project exhibition">
@@ -1325,7 +2057,7 @@
           <!-- Album 4: Talks by Professors -->
           <div class="gallery-album">
             <h3 class="gallery-album-header">
-              <span class="led-indicator led-gold"></span> [04] Talks by Professors
+              <span>[★] Talks by Professors & Guest Lectures</span>
             </h3>
             <div class="gallery-grid">
               <div class="gallery-item" data-caption="Keynote address in the lecture theater">
@@ -1341,13 +2073,13 @@
           </div>
 
           <!-- Gallery CTA Banner -->
-          <div class="nb-card nb-card-accent-red" style="margin-top: 2rem;">
-            <div class="nb-card-body" style="text-align: center; padding: 2.5rem 1.5rem;">
+          <div class="nb-card nb-card-accent-gold" style="margin-top: 3.5rem; text-align: center;">
+            <div class="nb-card-body" style="padding: 2.5rem 1.5rem;">
               <h3 class="font-pixel" style="font-size: 1.25rem; color: var(--dragon-gold); margin-bottom: 0.75rem;">
                 Let’s make new memories together
               </h3>
-              <p style="font-size: 1rem; color: var(--text-muted); margin-bottom: 1.5rem;">
-                Join the EECS Club and be part of our next story.
+              <p style="font-size: 0.95rem; color: var(--text-white); margin-bottom: 1.75rem; max-width: 550px; margin-left: auto; margin-right: auto;">
+                Join the EECS Club and be part of our next story. Build projects, organize events, and shape technology culture at IISER Bhopal.
               </p>
               <a href="#join" class="nb-btn nb-btn-primary">
                 [⚡] JOIN THE CLUB
@@ -1358,17 +2090,8 @@
         </div>
       </section>
 
-      <!-- Lightbox Modal -->
-      <div id="lightbox" class="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true">
-        <div class="lightbox-content">
-          <button id="lightbox-close" class="lightbox-close" aria-label="Close Lightbox">✕</button>
-          <img id="lightbox-img" src="" alt="Full view preview" />
-          <p id="lightbox-caption" class="font-mono" style="padding: 0.75rem 1rem; background-color: var(--bg-surface); color: var(--text-white); font-size: 0.85rem; border-top: 2px solid var(--border-color);"></p>
-        </div>
-      </div>
-
       <!-- ====================================================================
-           CHAPTER 05: KNOWLEDGE VAULT & RESOURCES (#resources)
+           10. RESOURCES HUB SECTION (#resources)
            ==================================================================== -->
       <section id="resources" class="section">
         <div class="container">
@@ -1385,30 +2108,26 @@
           </div>
 
           <div class="section-header">
-            <div class="section-tag">// 0x05_KNOWLEDGE_BASE</div>
+            <div class="section-tag">// 0x08_KNOWLEDGE_BASE</div>
             <h2 class="retro-title">Resources for <span data-scramble style="color: var(--dragon-gold);">EECS</span></h2>
             <p class="retro-subtitle">Curated learning materials, cheat sheets, and starter guides to help you get going.</p>
           </div>
 
-          <!-- Embedded Notion Frame Container -->
           <div class="resources-frame-container">
-            <iframe
-              src="https://the-nyoodle-boii.notion.site/ebd/26d7e86a586f8059b76dd60c1ed44412?v=26d7e86a586f80a39a66000ccfcceb14"
-              title="EECS Resources Knowledge Base"
+            <iframe 
+              src="https://the-nyoodle-boii.notion.site/ebd/26d7e86a586f8059b76dd60c1ed44412?v=26d7e86a586f80a39a66000ccfcceb14" 
               class="resources-iframe"
-              sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
               loading="lazy"
-            ></iframe>
+              title="EECS Resources Notion Database">
+            </iframe>
           </div>
 
-          <div style="text-align: center; margin-top: 1.5rem;">
-            <a
-              href="https://the-nyoodle-boii.notion.site/ebd/26d7e86a586f8059b76dd60c1ed44412?v=26d7e86a586f80a39a66000ccfcceb14"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="nb-btn nb-btn-gold"
-            >
-              [↗] OPEN NOTION DATABASE DIRECTLY
+          <div style="display: flex; justify-content: flex-end;">
+            <a href="https://the-nyoodle-boii.notion.site/26d7e86a586f8059b76dd60c1ed44412?v=26d7e86a586f80a39a66000ccfcceb14" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="nb-btn nb-btn-ghost nb-btn-sm">
+              [↗] Open Original Notion Page in New Tab
             </a>
           </div>
 
@@ -1416,7 +2135,7 @@
       </section>
 
       <!-- ====================================================================
-           CHAPTER 06: TRANSMISSION PORTAL & JOIN (#join)
+           11. JOIN US SECTION (#join)
            ==================================================================== -->
       <section id="join" class="section">
         <div class="container">
@@ -1433,7 +2152,7 @@
           </div>
 
           <div class="section-header">
-            <div class="section-tag">// 0x06_INVOLVEMENT</div>
+            <div class="section-tag">// 0x09_RECRUITMENT</div>
             <h2 class="retro-title">Join <span data-scramble style="color: var(--dragon-gold);">EECS Club</span></h2>
             <p class="retro-subtitle">Become a part of our community and explore the exciting world of technology.</p>
           </div>
@@ -1454,38 +2173,57 @@
             <!-- Left Card: Who Can Join & Benefits -->
             <div class="nb-card nb-card-accent-gold">
               <div class="nb-card-header">
-                <span class="nb-tag nb-tag-gold">WHO CAN JOIN?</span>
+                <span class="nb-tag nb-tag-gold">WHY JOIN & WHO CAN APPLY</span>
               </div>
               <div class="nb-card-body">
                 <p style="font-size: 1rem; color: var(--text-white); line-height: 1.7; margin-bottom: 1.5rem;">
-                  We welcome all IISER Bhopal students who are passionate about technology, regardless of their department or prior experience.
+                  We welcome all IISER Bhopal students who are passionate about technology, regardless of their department or prior programming experience.
                 </p>
 
                 <h3 class="font-pixel" style="font-size: 0.95rem; color: var(--dragon-gold); margin-bottom: 1rem;">
-                  Benefits of Joining:
+                  Key Member Benefits:
                 </h3>
                 
-                <ul class="benefits-list">
-                  <li class="benefit-item">Access to workshops, training sessions, and hackathons</li>
-                  <li class="benefit-item">Opportunity to work on real-world projects</li>
-                  <li class="benefit-item">Mentorship from senior students and faculty</li>
-                  <li class="benefit-item">Networking with industry professionals</li>
-                  <li class="benefit-item">Certificate of participation for active members</li>
+                <ul class="benefits-list" style="margin-bottom: 1.5rem;">
+                  <li class="benefit-item">Access to hands-on hardware lab benches, microcontrollers, and compute</li>
+                  <li class="benefit-item">Opportunity to work on real-world engineering and research projects</li>
+                  <li class="benefit-item">Mentorship from senior students and EECS faculty advisors</li>
+                  <li class="benefit-item">Team formation & funding support for national hackathons</li>
+                  <li class="benefit-item">Networking with industry professionals and research alumni</li>
+                  <li class="benefit-item">Certificate of active participation for club contributors</li>
                 </ul>
+
+                <h3 class="font-pixel" style="font-size: 0.95rem; color: var(--dragon-gold); margin-bottom: 0.75rem;">
+                  Open Domains & Roles:
+                </h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.45rem;">
+                  <span class="nb-tag nb-tag-dark">[⚡ AI & Deep Learning]</span>
+                  <span class="nb-tag nb-tag-dark">[🛠️ Embedded & Robotics]</span>
+                  <span class="nb-tag nb-tag-dark">[🌐 Web & Systems]</span>
+                  <span class="nb-tag nb-tag-dark">[🎪 Event Logistics & Ops]</span>
+                  <span class="nb-tag nb-tag-dark">[🎨 Media & Creative Design]</span>
+                </div>
               </div>
             </div>
 
             <!-- Right Card: Eligible Departments & Upcoming Windows -->
             <div class="nb-card nb-card-accent-aqua">
               <div class="nb-card-header">
-                <span class="nb-tag nb-tag-aqua">DEPARTMENT CRITERIA & SCHEDULE</span>
+                <span class="nb-tag nb-tag-aqua">HOW TO JOIN & ELIGIBILITY</span>
               </div>
               <div class="nb-card-body">
-                <h3 class="font-pixel" style="font-size: 0.95rem; color: var(--dragon-aqua); margin-bottom: 1rem;">
+                <h3 class="font-pixel" style="font-size: 0.95rem; color: var(--dragon-aqua); margin-bottom: 0.75rem;">
+                  How to Join:
+                </h3>
+                <p style="font-size: 0.9rem; color: var(--text-white); line-height: 1.6; margin-bottom: 1.25rem;">
+                  Recruitment happens through our annual Trainee Induction cycle. When applications open, submit your technical interest form, complete a hands-on beginner assignment, and attend a friendly interview discussion with club coordinators.
+                </p>
+
+                <h3 class="font-pixel" style="font-size: 0.95rem; color: var(--dragon-aqua); margin-bottom: 0.75rem;">
                   Eligible Academic Streams:
                 </h3>
 
-                <div style="display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 1.75rem;">
+                <div style="display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 1.5rem;">
                   <div class="nb-tag nb-tag-dark" style="justify-content: flex-start; padding: 0.6rem 0.85rem;">
                     [✓] Engineering Sciences (EECS, DSE, ChemE)
                   </div>
@@ -1505,14 +2243,146 @@
                   <p class="font-pixel" style="font-size: 0.8rem; color: var(--dragon-red-bright); margin-bottom: 0.35rem;">
                     TRAINEE APPLICATIONS OPEN
                   </p>
-                  <p class="font-mono" style="font-size: 0.8rem; color: var(--text-muted);">
+                  <p class="font-mono" style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">
                     Sept 15, 2025 • 2:30 PM to Sept 26, 2025 • 6:30 PM • ONLINE
+                  </p>
+                  <p class="font-mono" style="font-size: 0.75rem; color: var(--text-dim);">
+                    Open to all undergraduate and master's batches.
                   </p>
                 </div>
 
-                <p class="font-mono" style="font-size: 0.82rem; color: var(--text-dim);">
-                  Stay tuned to our official Instagram and LinkedIn for instant announcements and recruitment drop notices!
+                <a href="mailto:eecs.club.official@gmail.com?subject=EECS%20Club%20Trainee%20Application%20Inquiry" class="nb-btn nb-btn-primary" style="width: 100%; text-align: center;">
+                  [✉] SEND APPLICATION INQUIRY
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           12. CONTACT & SOCIALS SECTION (#contact)
+           Club-wide communication point (member socials live on section 8 cards)
+           ==================================================================== -->
+      <section id="contact" class="section">
+        <div class="container">
+
+          <div class="section-header">
+            <div class="section-tag">// 0x0A_COMMUNICATION</div>
+            <h2 class="retro-title">Contact & <span data-scramble style="color: var(--dragon-gold);">Socials</span></h2>
+            <p class="retro-subtitle">Club-wide official contact channels for inquiries, partnerships, and collaborations.</p>
+          </div>
+
+          <div class="contact-grid">
+
+            <!-- Left: Direct Inquiries & Campus Point -->
+            <div class="nb-card nb-card-accent-gold">
+              <div class="nb-card-header">
+                <span class="nb-tag nb-tag-gold">OFFICIAL CONTACT POINT</span>
+                <span class="font-mono" style="font-size: 0.75rem; color: var(--text-dim);">IISER Bhopal</span>
+              </div>
+              <div class="contact-card-body">
+                <h3 class="font-pixel" style="font-size: 1.05rem; color: var(--text-old-white);">
+                  Get in Touch with EECS Club
+                </h3>
+                <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
+                  Have questions regarding upcoming hackathons, project collaborations, workshops, or sponsorships? Reach out directly to our club coordinators.
                 </p>
+
+                <!-- Email Channel Item -->
+                <div class="contact-channel-item">
+                  <div class="contact-channel-icon">✉</div>
+                  <div>
+                    <span class="font-mono" style="font-size: 0.72rem; color: var(--dragon-gold); text-transform: uppercase; display: block;">Official Email</span>
+                    <a href="mailto:eecs.club.official@gmail.com" class="font-mono" style="font-size: 0.95rem; font-weight: 700; color: var(--text-old-white); text-decoration: underline;">
+                      eecs.club.official@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Location Channel Item -->
+                <div class="contact-channel-item">
+                  <div class="contact-channel-icon">🏛️</div>
+                  <div>
+                    <span class="font-mono" style="font-size: 0.72rem; color: var(--dragon-gold); text-transform: uppercase; display: block;">Department & Campus</span>
+                    <p class="font-mono" style="font-size: 0.82rem; color: var(--text-white); margin-bottom: 0;">
+                      Department of Electrical Engineering and Computer Science<br />
+                      Indian Institute of Science Education and Research Bhopal<br />
+                      Bhopal Bypass Road, Bhauri, Bhopal - 462066, MP, India
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Member socials note -->
+                <div style="background-color: var(--bg-deep-ink); border: 1px solid var(--border-color); padding: 0.85rem; font-size: 0.82rem; color: var(--text-dim);">
+                  <strong style="color: var(--dragon-gold);">Note:</strong> Looking for an individual member's socials or GitHub? Those live directly on each member's profile card in the <a href="#team" style="color: var(--dragon-red-bright); text-decoration: underline;">Team section</a>.
+                </div>
+
+                <a href="mailto:eecs.club.official@gmail.com" class="nb-btn nb-btn-primary" style="text-align: center;">
+                  [✉] WRITE TO COORDINATORS
+                </a>
+              </div>
+            </div>
+
+            <!-- Right: Club-Wide Socials Grid -->
+            <div class="nb-card nb-card-accent-red">
+              <div class="nb-card-header">
+                <span class="nb-tag nb-tag-red">OFFICIAL CHANNELS</span>
+                <span class="font-mono" style="font-size: 0.75rem; color: var(--text-dim);">Connect Everywhere</span>
+              </div>
+              <div class="contact-card-body">
+                <h3 class="font-pixel" style="font-size: 1.05rem; color: var(--text-old-white);">
+                  Follow Our Updates
+                </h3>
+                <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
+                  Stay updated with our latest hackathon results, technical workshops, hardware demos, and induction announcements.
+                </p>
+
+                <div class="contact-social-grid">
+                  
+                  <a href="https://www.instagram.com/eecs_club_iiserb/" target="_blank" rel="noopener noreferrer" class="contact-social-card">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    <div>
+                      <span>Instagram</span>
+                      <small style="display: block; font-size: 0.68rem; color: var(--text-dim);">@eecs_club_iiserb</small>
+                    </div>
+                  </a>
+
+                  <a href="https://www.linkedin.com/company/eecsclub-iiserb/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="contact-social-card">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    <div>
+                      <span>LinkedIn</span>
+                      <small style="display: block; font-size: 0.68rem; color: var(--text-dim);">eecsclub-iiserb</small>
+                    </div>
+                  </a>
+
+                  <a href="https://github.com/iiserb-eecs-club" target="_blank" rel="noopener noreferrer" class="contact-social-card">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    <div>
+                      <span>GitHub Org</span>
+                      <small style="display: block; font-size: 0.68rem; color: var(--text-dim);">iiserb-eecs-club</small>
+                    </div>
+                  </a>
+
+                  <a href="mailto:eecs.club.official@gmail.com" class="contact-social-card">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <div>
+                      <span>Official Mail</span>
+                      <small style="display: block; font-size: 0.68rem; color: var(--text-dim);">eecs.club.official</small>
+                    </div>
+                  </a>
+
+                </div>
+
+                <!-- Academic Link to Institute -->
+                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                  <a href="https://www.iiserb.ac.in" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-ghost nb-btn-sm" style="width: 100%;">
+                    [🏛️] Visit Official IISER Bhopal Website (iiserb.ac.in)
+                  </a>
+                </div>
+
               </div>
             </div>
 
@@ -1561,7 +2431,7 @@ Type "help" to list available commands, or click any suggestion chip below to ex
     </main>
 
     <!-- ====================================================================
-         FOOTER
+         13. FOOTER
          ==================================================================== -->
     <footer class="site-footer">
       <div class="container footer-grid">
@@ -1577,7 +2447,7 @@ Type "help" to list available commands, or click any suggestion chip below to ex
             </p>
           </div>
 
-          <!-- Social links -->
+          <!-- Social links repeat -->
           <div style="display: flex; align-items: center; gap: 0.75rem;">
             <a href="https://www.linkedin.com/company/eecsclub-iiserb/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" aria-label="LinkedIn">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
@@ -1585,15 +2455,41 @@ Type "help" to list available commands, or click any suggestion chip below to ex
             <a href="https://www.instagram.com/eecs_club_iiserb/" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" aria-label="Instagram">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
             </a>
+            <a href="https://github.com/iiserb-eecs-club" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" aria-label="GitHub Organization">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
             <a href="mailto:eecs.club.official@gmail.com" class="nb-icon-btn" aria-label="Email">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
             </a>
           </div>
         </div>
 
+        <!-- Quick Nav Links Repeat in Footer -->
+        <ul class="footer-nav-list">
+          <li><a href="#about" class="footer-nav-link">About</a></li>
+          <li><span style="color: var(--text-dim);">·</span></li>
+          <li><a href="#achievements" class="footer-nav-link">Achievements</a></li>
+          <li><span style="color: var(--text-dim);">·</span></li>
+          <li><a href="#events" class="footer-nav-link">Events</a></li>
+          <li><span style="color: var(--text-dim);">·</span></li>
+          <li><a href="#hackathons" class="footer-nav-link">Hackathons</a></li>
+          <li><span style="color: var(--text-dim);">·</span></li>
+          <li><a href="#projects" class="footer-nav-link">Projects</a></li>
+          <li><span style="color: var(--text-dim);">·</span></li>
+          <li><a href="#team" class="footer-nav-link">Team</a></li>
+          <li><span style="color: var(--text-dim);">·</span></li>
+          <li><a href="#gallery" class="footer-nav-link">Gallery</a></li>
+          <li><span style="color: var(--text-dim);">·</span></li>
+          <li><a href="#resources" class="footer-nav-link">Resources</a></li>
+          <li><span style="color: var(--text-dim);">·</span></li>
+          <li><a href="#join" class="footer-nav-link">Join Us</a></li>
+          <li><span style="color: var(--text-dim);">·</span></li>
+          <li><a href="#contact" class="footer-nav-link">Contact</a></li>
+        </ul>
+
         <div class="footer-bottom">
           <div>
-            © <span id="copyright-year">2026</span> EECS Club IISER Bhopal. All rights reserved.
+            © <span id="copyright-year">2026</span> EECS Club IISER Bhopal. All rights reserved. • <a href="https://www.iiserb.ac.in" target="_blank" rel="noopener noreferrer" style="color: var(--dragon-gold); text-decoration: underline;">Official IISERB Site</a>
           </div>
           
           <div style="display: flex; align-items: center; gap: 1rem;">
@@ -1607,6 +2503,15 @@ Type "help" to list available commands, or click any suggestion chip below to ex
       </div>
     </footer>
 
+  </div>
+
+  <!-- Lightbox Modal for Gallery and Achievements -->
+  <div id="lightbox" class="lightbox-modal" aria-hidden="true" role="dialog">
+    <div class="lightbox-content">
+      <button id="lightbox-close" class="lightbox-close" aria-label="Close Lightbox">✕</button>
+      <img id="lightbox-img" src="" alt="Expanded View" />
+      <div id="lightbox-caption" class="font-mono" style="padding: 0.75rem 1rem; background-color: var(--bg-deep-ink); color: var(--text-white); font-size: 0.85rem; border-top: 1px solid var(--border-color);"></div>
+    </div>
   </div>
 
   <!-- GSAP Animation Engine via CDN -->
