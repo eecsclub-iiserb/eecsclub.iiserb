@@ -16,9 +16,7 @@ export function initAnimations() {
     heroTl.from('.hero-tag-badge', { opacity: 0, y: -20, duration: 0.6 })
           .from('.hero-title', { opacity: 0, y: 30, duration: 0.8 }, '-=0.3')
           .from('.hero-tagline', { opacity: 0, y: 20, duration: 0.6 }, '-=0.4')
-          .from('.hero-cta-group', { opacity: 0, y: 20, duration: 0.6 }, '-=0.3')
-          .from('.hero-event-card', { opacity: 0, scale: 0.96, duration: 0.8 }, '-=0.4')
-          .from('.telemetry-metric-card', { opacity: 0, y: 25, stagger: 0.1, duration: 0.6 }, '-=0.4');
+          .from('.hero-cta-group', { opacity: 0, y: 20, duration: 0.6 }, '-=0.3');
 
     // 2. SVG Circuit Path Drawing on Scroll
     document.querySelectorAll('.pcb-circuit-line').forEach((line) => {
@@ -111,9 +109,6 @@ export function initAnimations() {
 
   // 6. Scroll Elevator Tracker (Active Rail)
   initScrollElevator();
-
-  // 7. Oscilloscope Live Sine Generator
-  initOscilloscope();
 }
 
 function initHudTelemetry() {
@@ -172,26 +167,4 @@ function initScrollElevator() {
       }
     });
   }, { passive: true });
-}
-
-function initOscilloscope() {
-  const wavePath = document.getElementById('oscilloscope-wave');
-  if (!wavePath) return;
-
-  let phase = 0;
-  function drawWave() {
-    requestAnimationFrame(drawWave);
-    phase += 0.08;
-
-    let d = 'M 0 27 ';
-    const width = 300;
-    for (let x = 0; x <= width; x += 6) {
-      const y = 27 + Math.sin(x * 0.06 + phase) * 14 * Math.cos(phase * 0.3);
-      d += `L ${x} ${y.toFixed(1)} `;
-    }
-
-    wavePath.setAttribute('d', d);
-  }
-
-  drawWave();
 }

@@ -319,8 +319,9 @@
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 3rem;
+  grid-template-columns: 1fr;
+  max-width: 900px;
+  gap: 2rem;
   align-items: center;
 }
 
@@ -1001,6 +1002,85 @@
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+.event-card-wide {
+  grid-column: 1 / -1;
+}
+
+.event-schedule-accordion {
+  margin: 1rem 0;
+  border: 1px solid var(--border-color);
+  background: var(--bg-deep-ink);
+}
+
+.event-accordion-summary {
+  padding: 0.75rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--dragon-aqua);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  background: rgba(0, 229, 255, 0.05);
+  transition: background var(--transition-fast), color var(--transition-fast);
+  list-style: none;
+}
+
+.event-accordion-summary::-webkit-details-marker {
+  display: none;
+}
+
+.event-accordion-summary:hover {
+  background: rgba(0, 229, 255, 0.12);
+  color: var(--dragon-gold);
+}
+
+.event-schedule-accordion[open] .event-accordion-summary {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.accordion-arrow {
+  transition: transform var(--transition-fast);
+  font-size: 0.75rem;
+  display: inline-block;
+}
+
+.event-schedule-accordion[open] .accordion-arrow {
+  transform: rotate(180deg);
+}
+
+.event-schedule-list {
+  padding: 0.75rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.65rem;
+}
+
+.event-schedule-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.55rem 0.75rem;
+  background: var(--bg-surface);
+  border-left: 3px solid var(--dragon-aqua);
+  font-size: 0.82rem;
+  font-family: var(--font-mono);
+}
+
+.event-schedule-date {
+  color: var(--dragon-gold);
+  font-weight: 700;
+  white-space: nowrap;
+  min-width: 68px;
+}
+
+.event-schedule-name {
+  color: var(--text-old-white);
+  line-height: 1.4;
 }
 
 /* --- Hackathons Section --- */

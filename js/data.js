@@ -475,44 +475,44 @@ export const achievements = [
 
 export const upcomingEvents = [
   {
-    id: "trainee-induction",
-    title: "Trainee Applications & Induction 2025–26",
-    date: "Sept 15, 2025 • 2:30 PM to Sept 26, 2025 • 6:30 PM",
-    venue: "ONLINE / IISER Bhopal Campus",
-    description: "Annual club induction cycle welcoming ambitious student developers, circuit designers, and research enthusiasts across all departments.",
-    status: "Closed",
-    cta: "Join Waitlist / Inquiry",
+    id: "orientation-2026",
+    title: "EECS CLUB Orientation",
+    date: "15th Sept 2026 • From 7:15 PM",
+    venue: "LHC L4, IISER Bhopal",
+    description: "Welcome to the Electrical Engineering & Computer Science Club! Discover our club roadmap, upcoming flagship initiatives, hands-on workshops, hardware workbenches, hackathon teams, and how to get involved.",
+    status: "Scheduled",
+    cta: "Join & Connect",
     ctaLink: "#join"
   },
   {
-    id: "hardware-bootcamp",
-    title: "Hands-on Microcontrollers & IoT Bootcamp",
-    date: "Upcoming Term • Weekend Intensive",
-    venue: "EECS Hardware Lab (Offline)",
-    description: "Direct hands-on lab training on ESP32 microcontrollers, GPIO sensors, I2C/SPI bus architecture, and C++ embedded firmware programming.",
-    status: "Upcoming",
-    cta: "Register Interest",
-    ctaLink: "#join"
-  },
-  {
-    id: "latent-s2",
-    title: "IISERB Got Latent: Season 2",
-    date: "Spring Flagship 2026",
-    venue: "Main Auditorium, IISER Bhopal",
-    description: "The return of our premier campus tech showdown, live hardware demos, algorithmic battles, and interactive jury pitches.",
-    status: "Upcoming",
-    cta: "View Past Recap",
-    ctaLink: "#gallery"
-  },
-  {
-    id: "quantum-seminar",
-    title: "Frontier Talk: Neuromorphic & Quantum Compute",
-    date: "Monthly Colloquium Series",
-    venue: "Lecture Hall Complex / Hybrid",
-    description: "Deep-dive academic seminar on emerging non-von-Neumann architectures, volatile memory devices, and neuromorphic computing.",
+    id: "guest-speaker-sept",
+    title: "Guest Speaker Session",
+    date: "28th Sept 2026",
+    venue: "LHC / Hybrid Stream, IISER Bhopal",
+    description: "Distinguished guest lecture exploring frontier breakthroughs in modern engineering, computing paradigms, and research frontiers. Open to all students and faculty.",
     status: "Upcoming",
     cta: "Contact Coordinators",
     ctaLink: "#contact"
+  },
+  {
+    id: "ibm-qiskit-fall-fest",
+    title: "IBM Qiskit Fall Fest 2026",
+    date: "9th to 18th Oct 2026",
+    venue: "IISER Bhopal (Hybrid / Offline & Online)",
+    description: "An intensive festival celebrating quantum computing in collaboration with IBM Quantum. Featuring hands-on Qiskit workshops, invited student talks, faculty panels, guest sessions, and an official hackathon.",
+    schedule: [
+      { date: "9th Oct", session: "Opening Ceremony and Hackathon Launch" },
+      { date: "10th Oct", session: "Elementary Qiskit Workshop" },
+      { date: "10th Oct", session: "Student Talk" },
+      { date: "11th Oct", session: "Advance Qiskit Workshop" },
+      { date: "11th Oct", session: "Panel Discussion" },
+      { date: "17th Oct", session: "Student Talk" },
+      { date: "18th Oct", session: "Guest Speaker Session" },
+      { date: "18th Oct", session: "Hackathon Presentation and Closing Ceremony" }
+    ],
+    status: "Registration Open",
+    cta: "Visit Qiskit Fall Fest Portal",
+    ctaLink: "https://qff-iiserb.vercel.app/"
   }
 ];
 
