@@ -223,8 +223,8 @@ function initTerminalConsole(applyThemeFn) {
     } else if (mainCmd === 'contact') {
       response = terminalEasterEggs['contact'];
     } else if (mainCmd === 'team') {
-      response = `[EECS CLUB ROSTER SUMMARY // 20 MEMBERS]\n` +
-        coreTeam.map((m, i) => `  [#${(i+1).toString().padStart(2, '0')}] ${m.name.padEnd(18)} | ${m.department}`).join('\n');
+      response = `[EECS CLUB ROSTER SUMMARY // ${coreTeam.length} CORE MEMBERS]\n` +
+        coreTeam.map((m, i) => `  [#${(i+1).toString().padStart(2, '0')}] ${m.name.padEnd(22)} | ${m.role} (${m.department})`).join('\n');
     } else if (mainCmd === 'projects') {
       response = `[EECS CLUB ACTIVE PROJECTS]\n` +
         projects.map((p) => `  • [${p.category.toUpperCase()}] ${p.title} (Lead: ${p.doneBy})`).join('\n');

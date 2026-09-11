@@ -20,7 +20,7 @@
   --text-white: #c8c093;
   --text-old-white: #dcd7ba;
   --text-muted: #8a9a86;
-  --text-dim: #727169;
+  --text-dim: #959489;
   --text-black: #12120f;
 
   --dragon-red: #c84053;
@@ -55,7 +55,7 @@ html[data-theme="tokyo-night"] {
   --text-white: #c0caf5;
   --text-old-white: #ffffff;
   --text-muted: #7aa2f7;
-  --text-dim: #565f89;
+  --text-dim: #828bb8;
   --text-black: #0f1017;
 
   --dragon-red: #f7768e;
@@ -90,7 +90,7 @@ html[data-theme="gruvbox"] {
   --text-white: #ebdbb2;
   --text-old-white: #fbf1c7;
   --text-muted: #d5c4a1;
-  --text-dim: #928374;
+  --text-dim: #a89984;
   --text-black: #141617;
 
   --dragon-red: #cc241d;
@@ -125,7 +125,7 @@ html[data-theme="nord"] {
   --text-white: #d8dee9;
   --text-old-white: #eceff4;
   --text-muted: #88c0d0;
-  --text-dim: #707d96;
+  --text-dim: #9aa6be;
   --text-black: #1d212a;
 
   --dragon-red: #bf616a;
@@ -160,7 +160,7 @@ html[data-theme="acid"] {
   --text-white: #f4f4f6;
   --text-old-white: #ffffff;
   --text-muted: #ffe600;
-  --text-dim: #7e7e94;
+  --text-dim: #9e9eb4;
   --text-black: #0a0a0c;
 
   --dragon-red: #ff2a5f;

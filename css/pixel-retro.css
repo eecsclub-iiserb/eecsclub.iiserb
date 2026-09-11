@@ -98,7 +98,10 @@ html, body {
 
 @media (max-width: 820px) {
   .hud-telemetry-bar {
-    display: none;
+    display: none !important;
+  }
+  :root {
+    --header-height: 64px;
   }
 }
 
