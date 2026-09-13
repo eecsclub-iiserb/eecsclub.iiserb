@@ -104,42 +104,18 @@ export function initAnimations() {
     });
   }
 
-  // 5. Live HUD Clock & Telemetry Ticker
-  initHudTelemetry();
-
-  // 6. Scroll Elevator Tracker (Active Rail)
-  initScrollElevator();
+  // 5. Active Header Nav Link Scrollspy
+  initNavScrollSpy();
 }
 
-function initHudTelemetry() {
-  const clockEl = document.getElementById('hud-clock');
-  const freqEl = document.getElementById('hud-freq');
-
-  function updateClock() {
-    if (!clockEl) return;
-    const now = new Date();
-    clockEl.innerText = now.toTimeString().split(' ')[0] + ' UTC+5:30';
-  }
-
-  function updateFreq() {
-    if (!freqEl) return;
-    const jitter = (24.00 + (Math.random() - 0.5) * 0.04).toFixed(2);
-    freqEl.innerText = `${jitter} MHz`;
-  }
-
-  setInterval(updateClock, 1000);
-  setInterval(updateFreq, 2500);
-  updateClock();
-  updateFreq();
-}
-
-function initScrollElevator() {
-  const elevatorNodes = document.querySelectorAll('.elevator-node');
+function initNavScrollSpy() {
   const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+  if (!sections.length || !navLinks.length) return;
 
   window.addEventListener('scroll', () => {
     let currentId = '';
-    const scrollPos = window.scrollY + 250;
+    const scrollPos = window.scrollY + 180;
 
     sections.forEach((section) => {
       const top = section.offsetTop;
@@ -149,17 +125,7 @@ function initScrollElevator() {
       }
     });
 
-    elevatorNodes.forEach((node) => {
-      const target = node.getAttribute('href').replace('#', '');
-      if (target === currentId) {
-        node.classList.add('active');
-      } else {
-        node.classList.remove('active');
-      }
-    });
-
-    // Also sync header nav links
-    document.querySelectorAll('.nav-link[href^="#"]').forEach((link) => {
+    navLinks.forEach((link) => {
       if (link.getAttribute('href') === `#${currentId}`) {
         link.classList.add('active');
       } else {

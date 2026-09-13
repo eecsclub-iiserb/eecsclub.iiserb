@@ -5,7 +5,6 @@
 
 import { initTextScramble, initCircuitCanvas, refreshCanvasTheme } from './reactbits.js';
 import { initAnimations } from './animations.js';
-import { terminalEasterEggs, siteConfig, coreTeam, projects } from './data.js';
 
 const THEME_LABELS = {
   'kanagawa': { icon: '🐲', name: 'KANAGAWA' },
@@ -15,7 +14,7 @@ const THEME_LABELS = {
   'acid': { icon: '⚡', name: 'ACID BRUTAL' }
 };
 
-document.addEventListener('DOMContentLoaded', () => {
+function initApp() {
   // 1. Initialize Visual Effects, Canvas & Animations
   initCircuitCanvas();
   initTextScramble();
@@ -26,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeMenu = document.getElementById('theme-menu');
   const themeBtnIcon = document.getElementById('theme-btn-icon');
   const themeBtnLabel = document.getElementById('theme-btn-label');
-  const hudTheme = document.getElementById('hud-theme');
   const themeOptions = document.querySelectorAll('[data-set-theme]');
 
   function applyTheme(themeId) {
@@ -37,9 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update Button Label & Icon in Navbar
     if (themeBtnIcon) themeBtnIcon.innerText = THEME_LABELS[themeId].icon;
     if (themeBtnLabel) themeBtnLabel.innerText = THEME_LABELS[themeId].name;
-
-    // Update HUD Telemetry indicator if present
-    if (hudTheme) hudTheme.innerText = THEME_LABELS[themeId].name;
 
     // Update active state on all theme buttons (navbar dropdown and mobile drawer)
     document.querySelectorAll('[data-set-theme]').forEach((opt) => {
@@ -97,8 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 3. Interactive Retro Lore Terminal Console
-  initTerminalConsole(applyTheme);
+// (terminal console removed)
 
   // 4. Mobile Navigation Drawer
   const mobileToggle = document.getElementById('mobile-toggle');
@@ -183,7 +177,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 7. Back to Top Button
+  // 7. Hackathons Master Directory Modal
+  const hackModal = document.getElementById('hackathons-modal');
+  const openHackModalBtn = document.getElementById('open-hackathons-modal-btn');
+  const closeHackModalBtn = document.getElementById('close-hackathons-modal-btn');
+
+  if (hackModal && openHackModalBtn) {
+    const openModal = () => {
+      hackModal.classList.add('open');
+      hackModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeModal = () => {
+      hackModal.classList.remove('open');
+      hackModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    };
+
+    openHackModalBtn.addEventListener('click', openModal);
+    if (closeHackModalBtn) closeHackModalBtn.addEventListener('click', closeModal);
+
+    hackModal.addEventListener('click', (e) => {
+      if (e.target === hackModal) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && hackModal.classList.contains('open')) {
+        closeModal();
+      }
+    });
+  }
+
+  // 8. Back to Top Button
   const backToTop = document.getElementById('back-to-top');
   if (backToTop) {
     backToTop.addEventListener('click', (e) => {
@@ -191,93 +217,12 @@ document.addEventListener('DOMContentLoaded', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
-});
-
-function initTerminalConsole(applyThemeFn) {
-  const terminalInput = document.getElementById('terminal-input');
-  const terminalOutput = document.getElementById('terminal-output');
-  const terminalChips = document.querySelectorAll('.lore-chip');
-
-  if (!terminalInput || !terminalOutput) return;
-
-  function runCommand(cmd) {
-    const raw = cmd.trim();
-    if (!raw) return;
-
-    const parts = raw.toLowerCase().split(' ');
-    const mainCmd = parts[0];
-    const arg = parts[1];
-
-    let response = '';
-
-    if (mainCmd === 'clear') {
-      terminalOutput.innerHTML = '';
-      terminalInput.value = '';
-      return;
-    } else if (mainCmd === 'help') {
-      response = terminalEasterEggs['help'];
-    } else if (mainCmd === 'lore') {
-      response = terminalEasterEggs['lore'];
-    } else if (mainCmd === 'whoami') {
-      response = terminalEasterEggs['whoami'];
-    } else if (mainCmd === 'contact') {
-      response = terminalEasterEggs['contact'];
-    } else if (mainCmd === 'team') {
-      response = `[EECS CLUB ROSTER SUMMARY // ${coreTeam.length} CORE MEMBERS]\n` +
-        coreTeam.map((m, i) => `  [#${(i+1).toString().padStart(2, '0')}] ${m.name.padEnd(22)} | ${m.role} (${m.department})`).join('\n');
-    } else if (mainCmd === 'projects') {
-      response = `[EECS CLUB ACTIVE PROJECTS]\n` +
-        projects.map((p) => `  • [${p.category.toUpperCase()}] ${p.title} (Lead: ${p.doneBy})`).join('\n');
-    } else if (mainCmd === 'stats') {
-      response = `[TELEMETRY STATS]\n` +
-        siteConfig.stats.map(s => `  ${s.label}: ${s.value}${s.suffix}`).join('\n');
-    } else if (mainCmd === 'theme') {
-      if (!arg) {
-        const current = document.documentElement.getAttribute('data-theme') || 'kanagawa';
-        const currentName = THEME_LABELS[current] ? THEME_LABELS[current].name : current;
-        response = `[THEME CONTROLLER // 5 RETRO COLOR PALETTES]\n` +
-          `Active Theme: ${currentName}\n\n` +
-          `Available Themes:\n` +
-          `  • kanagawa    [🐲] Kanagawa Dragon ink & gold (Default)\n` +
-          `  • tokyo-night [🌃] Cyberpunk neon blue & purple\n` +
-          `  • gruvbox     [📻] Retro hacker terminal amber & green\n` +
-          `  • nord        [❄️] Arctic frost cyan & polar slate\n` +
-          `  • acid        [⚡] Acid high-contrast cyber gold & coral\n\n` +
-          `Type: "theme <name>" (e.g. "theme tokyo-night") or use the navbar [🎨] dropdown.`;
-      } else if (THEME_LABELS[arg]) {
-        applyThemeFn(arg);
-        response = `[SUCCESS] Theme palette switched to "${THEME_LABELS[arg].name}" ${THEME_LABELS[arg].icon}.\nDisplay variables, CSS styles, and circuit canvas recalibrated.`;
-      } else {
-        response = `[ERROR] Unknown theme: "${arg}".\nAvailable: kanagawa, tokyo-night, gruvbox, nord, acid`;
-      }
-    } else {
-      response = `Command not found: "${raw}". Type "help" for available commands.`;
-    }
-
-    const commandBlock = document.createElement('div');
-    commandBlock.className = 'lore-terminal-output';
-    commandBlock.innerHTML = `<span style="color: var(--dragon-gold); font-weight: 700;">guest@iiserb:~$</span> ${escapeHtml(raw)}\n<span style="color: var(--text-white);">${escapeHtml(response)}</span>`;
-    terminalOutput.appendChild(commandBlock);
-
-    terminalInput.value = '';
-    const screen = terminalOutput.parentElement;
-    screen.scrollTop = screen.scrollHeight;
-  }
-
-  terminalInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      runCommand(terminalInput.value);
-    }
-  });
-
-  terminalChips.forEach((chip) => {
-    chip.addEventListener('click', () => {
-      const cmd = chip.getAttribute('data-cmd');
-      runCommand(cmd);
-    });
-  });
 }
 
-function escapeHtml(str) {
-  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
 }
+
+
