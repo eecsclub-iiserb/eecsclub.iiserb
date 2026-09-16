@@ -322,7 +322,7 @@ export const coreTeam = [
     department: "Engineering Science",
     year: "2nd Year",
     image: "assets/naman_gupta.webp",
-    bio: "Most bakchod person of the club",
+    bio: "Suffering with signals",
     github: "https://github.com/ng5433788-tech",
     linkedin: null,
     email: "namang25@iiserb.ac.in"
