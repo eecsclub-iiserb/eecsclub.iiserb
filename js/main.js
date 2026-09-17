@@ -109,7 +109,16 @@ function initApp() {
       link.addEventListener('click', () => {
         mobileDrawer.classList.remove('open');
         mobileToggle.innerText = '[☰] MENU';
+        mobileToggle.setAttribute('aria-expanded', 'false');
       });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (mobileDrawer.classList.contains('open') && !mobileDrawer.contains(e.target) && !mobileToggle.contains(e.target)) {
+        mobileDrawer.classList.remove('open');
+        mobileToggle.innerText = '[☰] MENU';
+        mobileToggle.setAttribute('aria-expanded', 'false');
+      }
     });
   }
 

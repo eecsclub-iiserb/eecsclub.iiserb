@@ -70,8 +70,30 @@
 }
 
 @media (max-width: 640px) {
+  .nb-card {
+    box-shadow: 2px 2px 0px var(--border-dark);
+  }
+  .nb-card-accent-red,
+  .nb-card-accent-red:hover {
+    box-shadow: 2px 2px 0px var(--dragon-red);
+  }
+  .nb-card-accent-gold,
+  .nb-card-accent-gold:hover {
+    box-shadow: 2px 2px 0px var(--dragon-gold);
+  }
+  .nb-card-accent-green,
+  .nb-card-accent-green:hover {
+    box-shadow: 2px 2px 0px var(--dragon-green);
+  }
+  .nb-card-accent-aqua,
+  .nb-card-accent-aqua:hover {
+    box-shadow: 2px 2px 0px var(--dragon-aqua);
+  }
+  .nb-card-header {
+    padding: 0.6rem 0.85rem;
+  }
   .nb-card-body {
-    padding: 1rem;
+    padding: 1rem 0.85rem;
   }
 }
 

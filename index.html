@@ -78,7 +78,7 @@
             <button id="theme-btn" class="theme-btn-current" aria-haspopup="true" aria-expanded="false" title="Switch Theme">
               <span id="theme-btn-icon">🎨</span>
               <span id="theme-btn-label">THEME</span>
-              <span style="font-size: 0.65rem;">▼</span>
+              <span class="theme-btn-arrow" style="font-size: 0.65rem;">▼</span>
             </button>
             <div id="theme-menu" class="theme-dropdown-menu" role="menu">
               <button class="theme-option active" data-set-theme="kanagawa">
@@ -125,10 +125,10 @@
           </div>
 
           <!-- Quick Socials in Navbar -->
-          <a href="https://www.linkedin.com/company/eecsclub-iiserb/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" style="width:34px;height:34px;" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/company/eecsclub-iiserb/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="nb-icon-btn nav-social-btn" style="width:34px;height:34px;" aria-label="LinkedIn">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
           </a>
-          <a href="https://www.instagram.com/eecs_club_iiserb/" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" style="width:34px;height:34px;" aria-label="Instagram">
+          <a href="https://www.instagram.com/eecs_club_iiserb/" target="_blank" rel="noopener noreferrer" class="nb-icon-btn nav-social-btn" style="width:34px;height:34px;" aria-label="Instagram">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
           </a>
 
@@ -2043,10 +2043,10 @@
               <span class="nb-tag nb-tag-gold">CENTRAL REPOSITORY // NOTION VAULT</span>
               <span class="font-mono" style="font-size: 0.75rem; color: var(--text-dim);">Updated Regularly</span>
             </div>
-            <div class="nb-card-body" style="padding: 2.25rem 2rem;">
-              <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem;">
+            <div class="nb-card-body vault-card-body">
+              <div class="vault-hero-header">
                 <div style="max-width: 580px;">
-                  <h3 class="font-pixel" style="font-size: 1.3rem; color: var(--text-old-white); margin-bottom: 0.75rem;">
+                  <h3 class="vault-card-title">
                     EECS Technical Vault &amp; Curated Starter Packs
                   </h3>
                   <p style="font-size: 0.95rem; color: var(--text-white); line-height: 1.6; margin: 0;">
@@ -2056,25 +2056,24 @@
                 <a href="https://the-nyoodle-boii.notion.site/26d7e86a586f8059b76dd60c1ed44412?v=26d7e86a586f80a39a66000ccfcceb14" 
                    target="_blank" 
                    rel="noopener noreferrer" 
-                   class="nb-btn nb-btn-primary" 
-                   style="white-space: nowrap; padding: 0.75rem 1.4rem;">
+                   class="nb-btn nb-btn-primary vault-cta-btn">
                   [↗] Open Live Notion Vault
                 </a>
               </div>
 
               <!-- Vault Modules Grid -->
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
-                <div style="background: var(--bg-deep-ink); border: 1px solid var(--border-color); padding: 1.1rem; display: flex; flex-direction: column; gap: 0.4rem;">
+              <div class="vault-modules-grid">
+                <div class="vault-module-card">
                   <span style="font-size: 1.25rem;">[⚡]</span>
                   <strong class="font-mono" style="font-size: 0.88rem; color: var(--dragon-gold);">Embedded &amp; Robotics</strong>
                   <span style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">ESP32, STM32 pinouts, ROS2 packages, sensor calibrations, and motor drivers.</span>
                 </div>
-                <div style="background: var(--bg-deep-ink); border: 1px solid var(--border-color); padding: 1.1rem; display: flex; flex-direction: column; gap: 0.4rem;">
+                <div class="vault-module-card">
                   <span style="font-size: 1.25rem;">[🧠]</span>
                   <strong class="font-mono" style="font-size: 0.88rem; color: var(--dragon-aqua);">AI &amp; Data Science</strong>
                   <span style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">PyTorch starter kits, Kaggle playbooks, LLM fine-tuning, and campus GPU cluster docs.</span>
                 </div>
-                <div style="background: var(--bg-deep-ink); border: 1px solid var(--border-color); padding: 1.1rem; display: flex; flex-direction: column; gap: 0.4rem;">
+                <div class="vault-module-card">
                   <span style="font-size: 1.25rem;">[💻]</span>
                   <strong class="font-mono" style="font-size: 0.88rem; color: var(--dragon-green-bright);">Web, Systems &amp; CP</strong>
                   <span style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">Full-stack roadmaps, Docker configs, Git workflows, and competitive programming topics.</span>
@@ -2101,22 +2100,22 @@
           </div>
 
           <!-- Trainee Team Application Notice -->
-          <div class="nb-card nb-card-accent-gold" style="max-width: 760px; margin: 0 auto; text-align: center;">
-            <div class="nb-card-body" style="padding: 3rem 2rem; display: flex; flex-direction: column; align-items: center; gap: 1.25rem;">
-              <div style="display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.4rem 1rem; background: var(--bg-deep-ink); border: 1px solid var(--dragon-gold);">
+          <div class="nb-card nb-card-accent-gold join-trainee-card" style="max-width: 760px; margin: 0 auto; text-align: center;">
+            <div class="nb-card-body join-trainee-body">
+              <div class="join-tag-pill">
                 <span class="led-indicator led-yellow" style="width: 10px; height: 10px; border-radius: 50%; background-color: var(--dragon-gold); box-shadow: 0 0 8px var(--dragon-gold);"></span>
                 <span class="font-mono" style="font-size: 0.85rem; font-weight: 700; color: var(--dragon-gold); letter-spacing: 0.05em;">TRAINEE INDUCTION</span>
               </div>
 
-              <h3 class="font-pixel" style="font-size: 1.4rem; color: var(--text-old-white); line-height: 1.4; margin: 0.25rem 0;">
+              <h3 class="join-card-title">
                 Application for Trainee team Opens soon
               </h3>
 
-              <p class="font-mono" style="font-size: 0.95rem; color: var(--text-muted); max-width: 580px; line-height: 1.6; margin: 0;">
+              <p class="join-card-desc font-mono">
                 Stay tuned for recruitment announcements following our orientation. Open to all students passionate about electronics, coding, robotics, and design.
               </p>
 
-              <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 0.75rem;">
+              <div class="join-cta-group">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLScOiUqNJJXvOrG5vuNzrMqaqGP_QujLK9zqwIQyXBo0mMaYcA/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-primary">
                   [⚡] JOIN NOW
                 </a>

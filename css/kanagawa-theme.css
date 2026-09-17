@@ -231,6 +231,8 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.25s ease, color 0.25s ease;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -238,8 +240,27 @@ body {
   background-color: var(--bg-deep-ink);
   color: var(--text-white);
   overflow-x: hidden;
+  max-width: 100%;
   position: relative;
   transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --header-height: 56px;
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  :root {
+    --header-height: 52px;
+  }
 }
 
 /* Custom Scrollbar */
