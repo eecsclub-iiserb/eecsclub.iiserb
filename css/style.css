@@ -2146,6 +2146,8 @@
 .back-to-top-btn:hover {
   background-color: var(--dragon-red);
   color: #ffffff;
+}
+
 /* --- Section Typography Utilities --- */
 .retro-title {
   font-family: var(--font-pixel);

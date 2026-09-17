@@ -232,6 +232,7 @@ html {
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.25s ease, color 0.25s ease;
   max-width: 100%;
+  touch-action: pan-y;
 }
 
 body {
@@ -243,7 +244,14 @@ body {
   position: relative;
   transition: background-color 0.25s ease, color 0.25s ease;
   overflow-x: clip;
+  touch-action: pan-y;
   -webkit-overflow-scrolling: touch;
+}
+
+@supports not (overflow-x: clip) {
+  body {
+    overflow-x: hidden;
+  }
 }
 
 @media (max-width: 768px) {
