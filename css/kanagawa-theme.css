@@ -231,18 +231,19 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.25s ease, color 0.25s ease;
-  overflow-x: hidden;
   max-width: 100%;
 }
 
 body {
   min-height: 100vh;
+  min-height: 100dvh;
   background-color: var(--bg-deep-ink);
   color: var(--text-white);
-  overflow-x: hidden;
   max-width: 100%;
   position: relative;
   transition: background-color 0.25s ease, color 0.25s ease;
+  overflow-x: clip;
+  -webkit-overflow-scrolling: touch;
 }
 
 @media (max-width: 768px) {
